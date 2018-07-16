@@ -5,9 +5,6 @@ E:\grievance\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\grievance\bin\Debug\MANUUFinance.exe.config
 E:\grievance\bin\Debug\MANUUFinance.exe
 E:\grievance\bin\Debug\MANUUFinance.pdb
-E:\grievance\bin\Debug\itextsharp.dll
-E:\grievance\bin\Debug\itextsharp.pdfa.dll
-E:\grievance\bin\Debug\itextsharp.xtra.dll
 E:\grievance\bin\Debug\Microsoft.AnalysisServices.AppLocal.Core.dll
 E:\grievance\bin\Debug\Microsoft.AnalysisServices.AppLocal.dll
 E:\grievance\bin\Debug\Microsoft.AnalysisServices.AppLocal.Tabular.dll
