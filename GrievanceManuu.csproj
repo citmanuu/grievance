@@ -128,6 +128,23 @@
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
     <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Forward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forward.Designer.cs">
+      <DependentUpon>Forward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grievance.Designer.cs">
+      <DependentUpon>Grievance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrievanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrievanceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +173,12 @@
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forward.resx">
+      <DependentUpon>Forward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grievance.resx">
+      <DependentUpon>Grievance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +190,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GrievanceDataSet.xsc">
+      <DependentUpon>GrievanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GrievanceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrievanceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrievanceDataSet.xss">
+      <DependentUpon>GrievanceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Voucher.datasource" />
     <None Include="Properties\DataSources\VoucherPrint.datasource" />

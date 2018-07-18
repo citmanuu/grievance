@@ -26,7 +26,8 @@ namespace MANUUFinance.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FINANCE\\SQLFINANCE;Initial Catalog=Finance;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FINANCE\\SQLFINANCE;Initial Catalog=Grievance;Integrated Security=True" +
+            "")]
         public string FinanceConnectionString {
             get {
                 return ((string)(this["FinanceConnectionString"]));

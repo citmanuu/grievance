@@ -54,3 +54,5 @@ E:\grievance\obj\Debug\GrievanceManuu.csproj.CopyComplete
 E:\grievance\obj\Debug\MANUUFinance.exe
 E:\grievance\obj\Debug\MANUUFinance.pdb
 E:\grievance\obj\Debug\GrievanceManuu.csprojResolveAssemblyReference.cache
+E:\grievance\obj\Debug\MANUUFinance.Grievance.resources
+E:\grievance\obj\Debug\MANUUFinance.Forward.resources

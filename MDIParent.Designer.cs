@@ -41,6 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dashboadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.complainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forwardCompainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +84,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboadToolStripMenuItem,
+            this.reportToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -150,6 +156,33 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // dashboadToolStripMenuItem
+            // 
+            this.dashboadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.complainToolStripMenuItem,
+            this.forwardCompainToolStripMenuItem});
+            this.dashboadToolStripMenuItem.Name = "dashboadToolStripMenuItem";
+            this.dashboadToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+            this.dashboadToolStripMenuItem.Text = "Dashboad";
+            // 
+            // complainToolStripMenuItem
+            // 
+            this.complainToolStripMenuItem.Name = "complainToolStripMenuItem";
+            this.complainToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.complainToolStripMenuItem.Text = "Complain";
+            // 
+            // forwardCompainToolStripMenuItem
+            // 
+            this.forwardCompainToolStripMenuItem.Name = "forwardCompainToolStripMenuItem";
+            this.forwardCompainToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.forwardCompainToolStripMenuItem.Text = "Forwarded Compain";
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
+            this.reportToolStripMenuItem.Text = "Report";
+            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +225,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripMenuItem dashboadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem complainToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forwardCompainToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
     }
 }
 
