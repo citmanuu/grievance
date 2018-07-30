@@ -22,40 +22,43 @@ namespace MANUUFinance
 
         private void submit_Click(object sender, EventArgs e)
         {
-            //if (validateRecord())
-            //{
-            //    //Connection String
-            //    string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+            if (validateRecord())
+            { //Connection String
+                string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
 
-            //    //Instantiate SQL Connection
-            //    SqlConnection con = new SqlConnection(cs);
+                //Instantiate SQL Connection
+                SqlConnection con = new SqlConnection(cs);
 
-            //    // Open the connection
-            //    con.Open();
-            //    // Get the number of the row in database
-            //    SqlCommand cmd = new SqlCommand("User_Validation", con);
+                // Open the connection
+                con.Open();
+                // Get the number of the row in database
+                SqlCommand cmd = new SqlCommand("User_Validation", con);
 
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@Name", txtUsername.Text);
-            //    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-            //    userId = Convert.ToInt32(cmd.ExecuteScalar());
-            //    con.Close();
-
-            //    switch (userId)
-            //    {
-            //        case -1:
-            //            MessageBox.Show("password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            cleartextbox();
-            //            break;
-            //        default:
-            //            this.Close();
-            //            MDIParent objectmdiparent = new MDIParent(userId);
-            //            objectmdiparent.ShowDialog();
-            //            break;
-            //    }
-            //}
-
-            MessageBox.Show("Account is Not activated","Warning" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                userId = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+                if(new AdministratorLogin().administratorLogin(userId))
+                {
+                    switch (userId)
+                    {
+                        case -1:
+                            MessageBox.Show("Username/password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cleartextbox();
+                            break;
+                        default:
+                            MDIParent objectmdiparent = new MDIParent(userId);
+                            objectmdiparent.ShowDialog();
+                            this.Close();
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please login with user account", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }                                             
+            }
         }
 
         private void cleartextbox()

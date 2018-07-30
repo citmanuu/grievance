@@ -25,12 +25,12 @@ namespace MANUUFinance
             InitializeComponent();
             this.UserId = UserId;
         }
-        int sectionID = 101;
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (retrivedata)
             {
-                Forward objforward = new Forward(Convert.ToInt32(label17.Text), sectionID);
+                Forward objforward = new Forward(Convert.ToInt32(label17.Text), findSection());
                 objforward.ShowDialog();
                 clearthebox();
             }
@@ -40,8 +40,6 @@ namespace MANUUFinance
 
         private void Grievance_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'grievanceDataSet.grievanceView' table. You can move, or remove it, as needed.
-            // this.grievanceViewTableAdapter.Fill(this.grievanceDataSet.grievanceView);
             Load_datagridview();
             actionnature();           
         }
@@ -55,20 +53,50 @@ namespace MANUUFinance
             SqlConnection objSqlConnection = new SqlConnection(cs);
             if (new AdministratorLogin().administratorLogin(UserId))
             {
-                SqlDataAdapter sqldb = new SqlDataAdapter("Select A.GID, B.UserName, B.EnrollmentID, B.YearOfAdmission, B.mobileNumber, B.courseName, B.emailID, B.DOB, B.center, A.GDescription, A.Gstatus, A.forwardedRemarks " +
-                    "from Grievances A, RegistrationUser B, Department C, FinancialYear D " +
-                    "where A.FKACID = B.PKACID  AND A.FKDEPID = C.DeptId AND A.FKFYID = D.PKFYID AND C.DeptId = '" + deptId + "' ", objSqlConnection);
+                SqlDataAdapter sqldb = new SqlDataAdapter("Select A.GID, B.UserName, B.EnrollmentID, B.YearOfAdmission, B.mobileNumber, B.courseName, B.emailID, B.DOB, B.center, A.GDescription, A.Gstatus, A.forwardedRemarks from Grievances A, RegistrationUser B where B.StudentId = A.StudentId ", objSqlConnection);
                 DataTable dtb1 = new DataTable();
                 sqldb.Fill(dtb1);
                 DGVGrievance.DataSource = dtb1;
             }
             else
             {
-              //  SqlDataAdapter sqldb = new SqlDataAdapter("Select D.FYName, DeptName, SL3Code, AccountName, BECY, RBECY, BENY, SL1Name, SL2Name, SL3Name, SL1ID, PKSL2, FKSL3ID, C.DeptId, D.PKFYID, B.PKACID, A.PKBUDGETID from Budget A, AccountsView B, Department C, FinancialYear D where A.FKACID = B.PKACID  AND A.FKDEPID = C.DeptId AND A.FKFYID = D.PKFYID", objSqlConnection);
+                SqlDataAdapter sqldb = new SqlDataAdapter("Select A.GID, B.UserName, B.EnrollmentID, B.YearOfAdmission, B.mobileNumber, B.courseName, B.emailID, B.DOB, B.center, A.GDescription, A.Gstatus, A.forwardedRemarks " +
+                    "from Grievances A, RegistrationUser B " +
+                    "where A.StudentId = B.StudentId and A.Gstatus != 202 and A.sectionID = '" + findSection() + "' ", objSqlConnection);
                 DataTable dtb1 = new DataTable();
-               // sqldb.Fill(dtb1);
+                sqldb.Fill(dtb1);
                 DGVGrievance.DataSource = dtb1;
+
             }
+        }
+
+        private int findSection()
+        {
+            int SID = 0;
+            //Connection String
+            string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+            //Instantiate SQL Connection
+            SqlConnection objSqlConnection = new SqlConnection(cs);
+            string selectCommand = "SELECT sectionId FROM [Grievance].[dbo].[User] WHERE UserID = '" + UserId + "'";
+            SqlCommand objSelectCommand = new SqlCommand(selectCommand, objSqlConnection);
+            try
+            {
+                objSqlConnection.Open();
+                SqlDataReader objDataReader = objSelectCommand.ExecuteReader();
+                if (objDataReader.Read())
+                {
+                    SID = Convert.ToInt32(objDataReader["sectionId"].ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error");
+            }
+            finally
+            {
+                objSqlConnection.Close();
+            }
+            return SID; 
         }
 
         private void actionnature()

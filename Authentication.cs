@@ -42,18 +42,24 @@ namespace MANUUFinance
                 cmd.Parameters.AddWithValue("@password", txtPassword.Text);
                 userId = Convert.ToInt32(cmd.ExecuteScalar());
                 con.Close();
-
-                switch (userId)
+                if (new AdministratorLogin().administratorLogin(userId))
                 {
-                    case -1:
-                        MessageBox.Show("Username/password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        cleartextbox();
-                        break;
-                    default:
-                         MDIParent objectmdiparent = new MDIParent(userId);
-                        objectmdiparent.ShowDialog();
-                        this.Close();
-                        break;
+                    MessageBox.Show("Please login with Super account", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    switch (userId)
+                    {
+                        case -1:
+                            MessageBox.Show("Username/password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cleartextbox();
+                            break;
+                        default:
+                            MDIParent objectmdiparent = new MDIParent(userId);
+                            objectmdiparent.ShowDialog();
+                            this.Close();
+                            break;
+                    }
                 }
             }
 

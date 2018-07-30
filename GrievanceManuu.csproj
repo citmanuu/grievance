@@ -121,6 +121,7 @@
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="AdministratorLogin.cs" />
+    <Compile Include="AdminLogin.cs" />
     <Compile Include="Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +152,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GrievanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GrievanceTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrievanceTrack.Designer.cs">
+      <DependentUpon>GrievanceTrack.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>

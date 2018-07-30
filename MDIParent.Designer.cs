@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grievanceTrackReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -120,6 +121,8 @@
             // 
             // reportToolStripMenuItem
             // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grievanceTrackReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
             this.reportToolStripMenuItem.Text = "Report";
@@ -184,6 +187,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // grievanceTrackReportToolStripMenuItem
+            // 
+            this.grievanceTrackReportToolStripMenuItem.Name = "grievanceTrackReportToolStripMenuItem";
+            this.grievanceTrackReportToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.grievanceTrackReportToolStripMenuItem.Text = "Grievance Track Report";
+            this.grievanceTrackReportToolStripMenuItem.Click += new System.EventHandler(this.grievanceTrackReportToolStripMenuItem_Click);
+            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +240,7 @@
         private System.Windows.Forms.ToolStripMenuItem complainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forwardCompainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grievanceTrackReportToolStripMenuItem;
     }
 }
 

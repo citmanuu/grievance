@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -47,17 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGVGrievance = new System.Windows.Forms.DataGridView();
-            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearOfAdmissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.centerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grievanceViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grievanceDataSet = new MANUUFinance.GrievanceDataSet();
             this.label12 = new System.Windows.Forms.Label();
@@ -89,6 +79,18 @@
             this.grievanceViewTableAdapter = new MANUUFinance.GrievanceDataSetTableAdapters.grievanceViewTableAdapter();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.GID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnrollmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YearOfAdmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.center = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forwardedRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGrievance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceViewBindingSource)).BeginInit();
@@ -271,112 +273,28 @@
             // 
             this.DGVGrievance.AllowUserToAddRows = false;
             this.DGVGrievance.AllowUserToDeleteRows = false;
-            this.DGVGrievance.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DGVGrievance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVGrievance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGrievance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.gIDDataGridViewTextBoxColumn,
-            this.userNameDataGridViewTextBoxColumn,
-            this.enrollmentIDDataGridViewTextBoxColumn,
-            this.yearOfAdmissionDataGridViewTextBoxColumn,
-            this.mobileNumberDataGridViewTextBoxColumn,
-            this.courseNameDataGridViewTextBoxColumn,
-            this.emailIDDataGridViewTextBoxColumn,
-            this.dOBDataGridViewTextBoxColumn,
-            this.centerDataGridViewTextBoxColumn,
-            this.gDescriptionDataGridViewTextBoxColumn,
-            this.gstatusDataGridViewTextBoxColumn});
-            this.DGVGrievance.DataSource = this.grievanceViewBindingSource;
+            this.GID,
+            this.UserName,
+            this.EnrollmentID,
+            this.YearOfAdmission,
+            this.mobileNumber,
+            this.courseName,
+            this.emailID,
+            this.DOB,
+            this.center,
+            this.GDescription,
+            this.Gstatus,
+            this.forwardedRemarks});
             this.DGVGrievance.Location = new System.Drawing.Point(14, 18);
             this.DGVGrievance.Name = "DGVGrievance";
             this.DGVGrievance.ReadOnly = true;
             this.DGVGrievance.Size = new System.Drawing.Size(278, 233);
             this.DGVGrievance.TabIndex = 47;
             this.DGVGrievance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGrievance_CellContentClick);
-            // 
-            // gIDDataGridViewTextBoxColumn
-            // 
-            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
-            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
-            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
-            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
-            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearOfAdmissionDataGridViewTextBoxColumn
-            // 
-            this.yearOfAdmissionDataGridViewTextBoxColumn.DataPropertyName = "YearOfAdmission";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.HeaderText = "YearOfAdmission";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.Name = "yearOfAdmissionDataGridViewTextBoxColumn";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.yearOfAdmissionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mobileNumberDataGridViewTextBoxColumn
-            // 
-            this.mobileNumberDataGridViewTextBoxColumn.DataPropertyName = "mobileNumber";
-            this.mobileNumberDataGridViewTextBoxColumn.HeaderText = "mobileNumber";
-            this.mobileNumberDataGridViewTextBoxColumn.Name = "mobileNumberDataGridViewTextBoxColumn";
-            this.mobileNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mobileNumberDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // courseNameDataGridViewTextBoxColumn
-            // 
-            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.HeaderText = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
-            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.courseNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // emailIDDataGridViewTextBoxColumn
-            // 
-            this.emailIDDataGridViewTextBoxColumn.DataPropertyName = "emailID";
-            this.emailIDDataGridViewTextBoxColumn.HeaderText = "emailID";
-            this.emailIDDataGridViewTextBoxColumn.Name = "emailIDDataGridViewTextBoxColumn";
-            this.emailIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dOBDataGridViewTextBoxColumn
-            // 
-            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
-            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
-            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
-            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dOBDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // centerDataGridViewTextBoxColumn
-            // 
-            this.centerDataGridViewTextBoxColumn.DataPropertyName = "center";
-            this.centerDataGridViewTextBoxColumn.HeaderText = "center";
-            this.centerDataGridViewTextBoxColumn.Name = "centerDataGridViewTextBoxColumn";
-            this.centerDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gDescriptionDataGridViewTextBoxColumn
-            // 
-            this.gDescriptionDataGridViewTextBoxColumn.DataPropertyName = "GDescription";
-            this.gDescriptionDataGridViewTextBoxColumn.HeaderText = "GDescription";
-            this.gDescriptionDataGridViewTextBoxColumn.Name = "gDescriptionDataGridViewTextBoxColumn";
-            this.gDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gDescriptionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // gstatusDataGridViewTextBoxColumn
-            // 
-            this.gstatusDataGridViewTextBoxColumn.DataPropertyName = "Gstatus";
-            this.gstatusDataGridViewTextBoxColumn.HeaderText = "Gstatus";
-            this.gstatusDataGridViewTextBoxColumn.Name = "gstatusDataGridViewTextBoxColumn";
-            this.gstatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gstatusDataGridViewTextBoxColumn.Visible = false;
             // 
             // grievanceViewBindingSource
             // 
@@ -683,6 +601,90 @@
             this.label19.TabIndex = 64;
             this.label19.Text = "None";
             // 
+            // GID
+            // 
+            this.GID.DataPropertyName = "GID";
+            this.GID.HeaderText = "GID";
+            this.GID.Name = "GID";
+            this.GID.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "UserName";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // EnrollmentID
+            // 
+            this.EnrollmentID.DataPropertyName = "EnrollmentID";
+            this.EnrollmentID.HeaderText = "EnrollmentID";
+            this.EnrollmentID.Name = "EnrollmentID";
+            this.EnrollmentID.ReadOnly = true;
+            // 
+            // YearOfAdmission
+            // 
+            this.YearOfAdmission.DataPropertyName = "YearOfAdmission";
+            this.YearOfAdmission.HeaderText = "YearOfAdmission";
+            this.YearOfAdmission.Name = "YearOfAdmission";
+            this.YearOfAdmission.ReadOnly = true;
+            // 
+            // mobileNumber
+            // 
+            this.mobileNumber.DataPropertyName = "mobileNumber";
+            this.mobileNumber.HeaderText = "mobileNumber";
+            this.mobileNumber.Name = "mobileNumber";
+            this.mobileNumber.ReadOnly = true;
+            // 
+            // courseName
+            // 
+            this.courseName.DataPropertyName = "courseName";
+            this.courseName.HeaderText = "courseName";
+            this.courseName.Name = "courseName";
+            this.courseName.ReadOnly = true;
+            // 
+            // emailID
+            // 
+            this.emailID.DataPropertyName = "emailID";
+            this.emailID.HeaderText = "emailID";
+            this.emailID.Name = "emailID";
+            this.emailID.ReadOnly = true;
+            // 
+            // DOB
+            // 
+            this.DOB.DataPropertyName = "DOB";
+            this.DOB.HeaderText = "DOB";
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = true;
+            // 
+            // center
+            // 
+            this.center.DataPropertyName = "center";
+            this.center.HeaderText = "center";
+            this.center.Name = "center";
+            this.center.ReadOnly = true;
+            // 
+            // GDescription
+            // 
+            this.GDescription.DataPropertyName = "GDescription";
+            this.GDescription.HeaderText = "GDescription";
+            this.GDescription.Name = "GDescription";
+            this.GDescription.ReadOnly = true;
+            // 
+            // Gstatus
+            // 
+            this.Gstatus.DataPropertyName = "Gstatus";
+            this.Gstatus.HeaderText = "Gstatus";
+            this.Gstatus.Name = "Gstatus";
+            this.Gstatus.ReadOnly = true;
+            // 
+            // forwardedRemarks
+            // 
+            this.forwardedRemarks.DataPropertyName = "forwardedRemarks";
+            this.forwardedRemarks.HeaderText = "forwardedRemarks";
+            this.forwardedRemarks.Name = "forwardedRemarks";
+            this.forwardedRemarks.ReadOnly = true;
+            // 
             // Grievance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,19 +772,20 @@
         private GrievanceDataSet grievanceDataSet;
         private System.Windows.Forms.BindingSource grievanceViewBindingSource;
         private GrievanceDataSetTableAdapters.grievanceViewTableAdapter grievanceViewTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearOfAdmissionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobileNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn centerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gstatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnrollmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YearOfAdmission;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobileNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn center;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gstatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn forwardedRemarks;
     }
 }

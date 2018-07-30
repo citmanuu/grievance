@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MANUUFinance
 {
-    class AdministratorLogin
+    class AdminLogin
     {
         public bool administratorLogin(int userId)
         {
@@ -18,7 +18,7 @@ namespace MANUUFinance
             SqlConnection objSqlConnection = new SqlConnection(cs);
             //Prepare Update String
             objSqlConnection.Open();
-            SqlCommand myCommand = new SqlCommand("SELECT Username FROM [Grievance].[dbo].[User] where UserId = '" + userId + "'", objSqlConnection);
+            SqlCommand myCommand = new SqlCommand("SELECT Username FROM [Grievance].[dbo].[User] where UserID = '" + userId + "'", objSqlConnection);
             SqlDataReader objDataReader = myCommand.ExecuteReader();
 
             while (objDataReader.Read())
@@ -32,6 +32,7 @@ namespace MANUUFinance
                     admin = true;
                 }
             }
+           
             objSqlConnection.Close();
             return admin;
         }

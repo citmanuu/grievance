@@ -58,8 +58,25 @@ namespace MANUUFinance
         }
 
         private void MDIParent_Load(object sender, EventArgs e)
-        {            
-        }        
+        {
+            DisplayUserName();
+        }
+
+        private void DisplayUserName()
+        {
+            string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+            //Instantiate SQL Connection
+            SqlConnection objSqlConnection = new SqlConnection(cs);
+            //Prepare Update String
+            objSqlConnection.Open();
+            SqlCommand myCommand = new SqlCommand("SELECT Username FROM [Grievance].[dbo].[User] where UserID = '" + userId + "'", objSqlConnection);
+            SqlDataReader objDataReader = myCommand.ExecuteReader();
+            while (objDataReader.Read())
+            {
+                label1.Text = objDataReader["Username"].ToString();
+            }
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,5 +87,11 @@ namespace MANUUFinance
             Grievance objectgrievance = new Grievance(userId);
             objectgrievance.ShowDialog();
         }
+
+        private void grievanceTrackReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrievanceTrack objgrievanceTrack = new GrievanceTrack();
+            objgrievanceTrack.ShowDialog();
+        } 
     }
 }
