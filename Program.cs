@@ -17,8 +17,8 @@ namespace MANUUFinance
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MDIParent(0,0,0));
-            // Application.Run(new Home());
-            Application.Run(new Grievance());
+             Application.Run(new Home());
+            //Application.Run(new Grievance());
             //Application.Run(new Forward());
         }
     }

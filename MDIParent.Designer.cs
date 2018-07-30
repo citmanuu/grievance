@@ -34,6 +34,10 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dashboadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.complainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forwardCompainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,10 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dashboadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.complainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forwardCompainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,6 +95,34 @@
             this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dashboadToolStripMenuItem
+            // 
+            this.dashboadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.complainToolStripMenuItem,
+            this.forwardCompainToolStripMenuItem});
+            this.dashboadToolStripMenuItem.Name = "dashboadToolStripMenuItem";
+            this.dashboadToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+            this.dashboadToolStripMenuItem.Text = "Dashboad";
+            // 
+            // complainToolStripMenuItem
+            // 
+            this.complainToolStripMenuItem.Name = "complainToolStripMenuItem";
+            this.complainToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.complainToolStripMenuItem.Text = "Grievance";
+            this.complainToolStripMenuItem.Click += new System.EventHandler(this.complainToolStripMenuItem_Click);
+            // 
+            // forwardCompainToolStripMenuItem
+            // 
+            this.forwardCompainToolStripMenuItem.Name = "forwardCompainToolStripMenuItem";
+            this.forwardCompainToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.forwardCompainToolStripMenuItem.Text = "Forwarded Grievance";
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
+            this.reportToolStripMenuItem.Text = "Report";
             // 
             // aboutToolStripMenuItem
             // 
@@ -155,33 +183,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(28, 25);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // dashboadToolStripMenuItem
-            // 
-            this.dashboadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.complainToolStripMenuItem,
-            this.forwardCompainToolStripMenuItem});
-            this.dashboadToolStripMenuItem.Name = "dashboadToolStripMenuItem";
-            this.dashboadToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
-            this.dashboadToolStripMenuItem.Text = "Dashboad";
-            // 
-            // complainToolStripMenuItem
-            // 
-            this.complainToolStripMenuItem.Name = "complainToolStripMenuItem";
-            this.complainToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.complainToolStripMenuItem.Text = "Complain";
-            // 
-            // forwardCompainToolStripMenuItem
-            // 
-            this.forwardCompainToolStripMenuItem.Name = "forwardCompainToolStripMenuItem";
-            this.forwardCompainToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.forwardCompainToolStripMenuItem.Text = "Forwarded Compain";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
-            this.reportToolStripMenuItem.Text = "Report";
             // 
             // MDIParent
             // 

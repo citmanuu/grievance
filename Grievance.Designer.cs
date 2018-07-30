@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtCourseName = new System.Windows.Forms.TextBox();
             this.txtYOA = new System.Windows.Forms.TextBox();
@@ -60,16 +61,16 @@
             this.grievanceViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grievanceDataSet = new MANUUFinance.GrievanceDataSet();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtDeptNameSearch = new System.Windows.Forms.TextBox();
+            this.txtGrievanceNumber = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCenterSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClearSearch = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextRemarks = new System.Windows.Forms.RichTextBox();
             this.btnresponse = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -87,7 +88,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.grievanceViewTableAdapter = new MANUUFinance.GrievanceDataSetTableAdapters.grievanceViewTableAdapter();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGrievance)).BeginInit();
@@ -126,6 +126,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Applicant";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(737, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(51, 20);
+            this.label18.TabIndex = 58;
+            this.label18.Text = "None";
             // 
             // label16
             // 
@@ -384,17 +394,17 @@
             this.label12.Location = new System.Drawing.Point(14, 21);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 15);
+            this.label12.Size = new System.Drawing.Size(110, 15);
             this.label12.TabIndex = 51;
-            this.label12.Text = "Enrollment Id";
+            this.label12.Text = "Grievance Number";
             // 
-            // txtDeptNameSearch
+            // txtGrievanceNumber
             // 
-            this.txtDeptNameSearch.Location = new System.Drawing.Point(17, 39);
-            this.txtDeptNameSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDeptNameSearch.Name = "txtDeptNameSearch";
-            this.txtDeptNameSearch.Size = new System.Drawing.Size(242, 21);
-            this.txtDeptNameSearch.TabIndex = 48;
+            this.txtGrievanceNumber.Location = new System.Drawing.Point(17, 39);
+            this.txtGrievanceNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGrievanceNumber.Name = "txtGrievanceNumber";
+            this.txtGrievanceNumber.Size = new System.Drawing.Size(242, 21);
+            this.txtGrievanceNumber.TabIndex = 48;
             // 
             // btnSearch
             // 
@@ -405,14 +415,15 @@
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.textEmail);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.txtCenterSearch);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtDeptNameSearch);
+            this.groupBox2.Controls.Add(this.txtGrievanceNumber);
             this.groupBox2.Controls.Add(this.btnClearSearch);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.btnSearch);
@@ -423,13 +434,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Searching";
             // 
-            // textBox8
+            // textEmail
             // 
-            this.textBox8.Location = new System.Drawing.Point(20, 137);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(239, 21);
-            this.textBox8.TabIndex = 54;
+            this.textEmail.Location = new System.Drawing.Point(20, 137);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(239, 21);
+            this.textEmail.TabIndex = 54;
             // 
             // label10
             // 
@@ -441,13 +452,13 @@
             this.label10.TabIndex = 55;
             this.label10.Text = "Center wise";
             // 
-            // textBox7
+            // txtCenterSearch
             // 
-            this.textBox7.Location = new System.Drawing.Point(17, 88);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(242, 21);
-            this.textBox7.TabIndex = 52;
+            this.txtCenterSearch.Location = new System.Drawing.Point(17, 88);
+            this.txtCenterSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCenterSearch.Name = "txtCenterSearch";
+            this.txtCenterSearch.Size = new System.Drawing.Size(242, 21);
+            this.txtCenterSearch.TabIndex = 52;
             // 
             // label9
             // 
@@ -468,6 +479,7 @@
             this.btnClearSearch.TabIndex = 49;
             this.btnClearSearch.Text = "Clear Controls";
             this.btnClearSearch.UseVisualStyleBackColor = true;
+            this.btnClearSearch.Click += new System.EventHandler(this.btnClearSearch_Click);
             // 
             // txtDescription
             // 
@@ -478,14 +490,14 @@
             this.txtDescription.TabIndex = 54;
             this.txtDescription.Text = "";
             // 
-            // richTextBox2
+            // richTextRemarks
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(23, 20);
-            this.richTextBox2.MaxLength = 250;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(496, 120);
-            this.richTextBox2.TabIndex = 55;
-            this.richTextBox2.Text = "";
+            this.richTextRemarks.Location = new System.Drawing.Point(23, 20);
+            this.richTextRemarks.MaxLength = 250;
+            this.richTextRemarks.Name = "richTextRemarks";
+            this.richTextRemarks.Size = new System.Drawing.Size(496, 120);
+            this.richTextRemarks.TabIndex = 55;
+            this.richTextRemarks.Text = "";
             // 
             // btnresponse
             // 
@@ -496,17 +508,18 @@
             this.btnresponse.TabIndex = 54;
             this.btnresponse.Text = "Response";
             this.btnresponse.UseVisualStyleBackColor = true;
+            this.btnresponse.Click += new System.EventHandler(this.btnresponse_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.richTextBox2);
+            this.groupBox3.Controls.Add(this.richTextRemarks);
             this.groupBox3.Controls.Add(this.btnresponse);
             this.groupBox3.Location = new System.Drawing.Point(377, 455);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(541, 199);
             this.groupBox3.TabIndex = 56;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Response to Applicant";
+            this.groupBox3.Text = "Remarks from other sections";
             // 
             // label8
             // 
@@ -540,6 +553,7 @@
             this.button4.TabIndex = 58;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnPending
             // 
@@ -550,6 +564,7 @@
             this.btnPending.TabIndex = 57;
             this.btnPending.Text = "Pending ";
             this.btnPending.UseVisualStyleBackColor = true;
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
             // 
             // btnForward
             // 
@@ -570,6 +585,7 @@
             this.comboAction.Name = "comboAction";
             this.comboAction.Size = new System.Drawing.Size(142, 21);
             this.comboAction.TabIndex = 58;
+            this.comboAction.SelectedIndexChanged += new System.EventHandler(this.comboAction_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -657,16 +673,6 @@
             this.label17.TabIndex = 63;
             this.label17.Text = "0000";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(737, 100);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 20);
-            this.label18.TabIndex = 58;
-            this.label18.Text = "None";
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -735,18 +741,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGVGrievance;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtDeptNameSearch;
+        private System.Windows.Forms.TextBox txtGrievanceNumber;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCenterSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnClearSearch;
         private System.Windows.Forms.RichTextBox txtDescription;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextRemarks;
         private System.Windows.Forms.Button btnresponse;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnPending;

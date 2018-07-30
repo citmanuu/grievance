@@ -127,7 +127,14 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Emailsend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emailsend.Designer.cs">
+      <DependentUpon>Emailsend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forward.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +158,7 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOV.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,7 +166,6 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="AcTypeClass.cs" />
-    <Compile Include="LOV.cs" />
     <Compile Include="MDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emailsend.resx">
+      <DependentUpon>Emailsend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forward.resx">
       <DependentUpon>Forward.cs</DependentUpon>

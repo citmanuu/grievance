@@ -15,13 +15,11 @@ namespace MANUUFinance
     public partial class MDIParent : Form
     {
         private int childFormNumber = 0;
-        private int userId, deptId,roleId;
-        public MDIParent(int userId,int deptId, int roleId)
+        private int userId;
+        public MDIParent(int userId)
         {
             InitializeComponent();
             this.userId = userId;
-            this.deptId = deptId;
-            this.roleId = roleId;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -65,6 +63,12 @@ namespace MANUUFinance
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void complainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Grievance objectgrievance = new Grievance(userId);
+            objectgrievance.ShowDialog();
+        }
     }
 }

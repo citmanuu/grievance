@@ -22,56 +22,58 @@ namespace MANUUFinance
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (validateRecord())
-            {
-                //Connection String
-                string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+            //if (validateRecord())
+            //{
+            //    //Connection String
+            //    string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
 
-                //Instantiate SQL Connection
-                SqlConnection con = new SqlConnection(cs);
+            //    //Instantiate SQL Connection
+            //    SqlConnection con = new SqlConnection(cs);
 
-                // Open the connection
-                con.Open();
-                // Get the number of the row in database
-                SqlCommand cmd = new SqlCommand("User_Validation", con);
+            //    // Open the connection
+            //    con.Open();
+            //    // Get the number of the row in database
+            //    SqlCommand cmd = new SqlCommand("User_Validation", con);
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Name", textBox1.Text);
-                cmd.Parameters.AddWithValue("@Password", textBox2.Text);
-                userId = Convert.ToInt32(cmd.ExecuteScalar());
-                con.Close();
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@Name", txtUsername.Text);
+            //    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+            //    userId = Convert.ToInt32(cmd.ExecuteScalar());
+            //    con.Close();
 
-                switch (userId)
-                {
-                    case -1:
-                        MessageBox.Show("password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        cleartextbox();
-                        break;
-                    default:
-                        this.Close();
-                        MDIParent objectmdiparent = new MDIParent(userId, 0, 0);
-                        objectmdiparent.ShowDialog();
-                        break;
-                }
-            }
+            //    switch (userId)
+            //    {
+            //        case -1:
+            //            MessageBox.Show("password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            cleartextbox();
+            //            break;
+            //        default:
+            //            this.Close();
+            //            MDIParent objectmdiparent = new MDIParent(userId);
+            //            objectmdiparent.ShowDialog();
+            //            break;
+            //    }
+            //}
+
+            MessageBox.Show("Account is Not activated","Warning" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void cleartextbox()
         {
-            textBox1.Text = String.Empty;
-            textBox2.Text = String.Empty;
+            txtUsername.Text = String.Empty;
+            txtPassword.Text = String.Empty;
         }
 
         private bool validateRecord()
         {
             bool validationResult = true;
             string validationMessage = "";
-            if (textBox1.Text.Length == 0)
+            if (txtUsername.Text.Length == 0)
             {
                 validationMessage += "Please provide User Name\n";
                 validationResult = false;
             }
-            if (textBox2.Text.Length == 0)
+            if (txtPassword.Text.Length == 0)
             {
                 validationMessage += "Please provide Password\n";
                 validationResult = false;
