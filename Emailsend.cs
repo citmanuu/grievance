@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -16,13 +18,15 @@ namespace MANUUFinance
     {
         OpenFileDialog ofdAttachment;
         String fileName = "",UserEmail;
-        int enroll, gid;
+        int enroll, gid, sectionID;
+        Boolean retrivedata = false;
 
-        public Emailsend(string UserEmail, int enroll, int gid)
+        public Emailsend(string UserEmail, int enroll, int gid, int sectionID)
         {
             this.UserEmail = UserEmail;
             this.enroll = enroll;
             this.gid = gid;
+            this.sectionID = sectionID;
             InitializeComponent();
         }
 
@@ -74,7 +78,75 @@ namespace MANUUFinance
             }
             finally
             {
+                retrivedata = true;
+                updatethedetail();
+                updategrievancetrack();
                 this.Close();
+            }
+        }
+
+        private void updategrievancetrack()
+        {
+            if (retrivedata)
+            {
+
+                //Connection String
+                string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+                //Instantiate SQL Connection
+                SqlConnection objSqlConnection = new SqlConnection(cs);
+                //Prepare Update String
+                string insertCommand = "Insert into GrievanceTrack (GID, fromUnit, ToUnit, remarks, action, forwardedDate) values " +
+                                        "(@GID, @fromUnit, @ToUnit, @remarks, 202,@forwardedDate)";
+                SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
+
+                objInsertCommand.Parameters.AddWithValue("@GID", gid);
+                objInsertCommand.Parameters.AddWithValue("@fromUnit", sectionID);
+                objInsertCommand.Parameters.AddWithValue("@ToUnit", "");
+                objInsertCommand.Parameters.AddWithValue("@remarks", rtbBody.Text);
+                objInsertCommand.Parameters.AddWithValue("@forwardedDate", DateTime.Now);
+                try
+                {
+                    objSqlConnection.Open();
+                    objInsertCommand.ExecuteNonQuery();
+                    // MessageBox.Show("Record Added Successfully", "Record Addition Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("The following error occured : " + ex.Message, "Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    objSqlConnection.Close();
+                    this.Close();
+                }
+            }           
+        }
+
+        private void updatethedetail()
+        {
+
+            //Connection String
+            string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+            //Instantiate SQL Connection
+            SqlConnection objSqlConnection = new SqlConnection(cs);
+            //Prepare Update String
+            string insertCommand = " update Grievances set forwardedRemarks = @remarks, Gstatus= 202 where GID = '" + gid + "'";
+            SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
+
+            objInsertCommand.Parameters.AddWithValue("@remarks", rtbBody.Text);
+            try
+            {
+                objSqlConnection.Open();
+                objInsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Record Sent Successfully", "Record Addition Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("The following error occured : " + ex.Message, "Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                objSqlConnection.Close();
             }
         }
 

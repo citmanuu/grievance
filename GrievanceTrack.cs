@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MANUUFinance
 {
@@ -28,6 +29,15 @@ namespace MANUUFinance
             this.grievanceTrackTableAdapter.Fill(this.grievanceDataSet1.GrievanceTrack);
             combopreparationforaction();
             combopreparationforsectionID();
+           
+        }
+
+        private void chardefault(int a, int b, int c, int d)
+        {
+            grievanceReportChart.Series["Forward"].Points.AddXY("", a);
+            grievanceReportChart.Series["Pending"].Points.AddXY("", b);
+            grievanceReportChart.Series["Closed"].Points.AddXY("", c);
+            grievanceReportChart.Series["Open"].Points.AddXY("", d);
         }
 
         private void combopreparationforsectionID()
@@ -99,6 +109,138 @@ namespace MANUUFinance
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void btnfilter_Click(object sender, EventArgs e)
+        {
+            StringBuilder SearchStatement = new StringBuilder();
+            try
+            {
+                if (dateTimePicker1.Value == dateTimePicker2.Value)
+                {
+                    grievanceTrackBindingSource.Filter = SearchStatement.ToString();
+                }
+                else
+                {
+                    grievanceTrackBindingSource.Filter = "forwardedDate >= '" + dateTimePicker1.Value + "' And " + "forwardedDate <= '" + dateTimePicker2.Value + "'";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Exception");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {            
+            StringBuilder SearchStatement = new StringBuilder();
+            try
+            {
+                SearchStatement.Clear();
+                if (comboAction.SelectedIndex != 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append(" and ");
+                    }
+                    SearchStatement.Append("action like '%" + comboAction.SelectedItem + "%'");
+                }
+
+                if (comboSection.SelectedIndex != 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append(" and ");
+                    }
+                    SearchStatement.Append("fromUnit like '%" + comboSection.SelectedItem + "%'");
+                }
+
+                grievanceTrackBindingSource.Filter = SearchStatement.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Exception");
+            }
+            buildchart();
+        }
+
+        private void buildchart()
+        {
+           // Instantiate SQL Connection
+            SqlConnection objSqlConnection = new SqlConnection(cs);
+            // Prepare Update String
+            string selectCommand1 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 201 AND fromUnit = '"+comboSection.SelectedValue + "'";
+            SqlCommand objSelectCommand1 = new SqlCommand(selectCommand1, objSqlConnection);
+
+            string selectCommand2 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 202 AND fromUnit = '" + comboSection.SelectedValue + "'";
+            SqlCommand objSelectCommand2 = new SqlCommand(selectCommand2, objSqlConnection);
+
+            string selectCommand3 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 203 AND fromUnit = '" + comboSection.SelectedValue + "'";
+            SqlCommand objSelectCommand3 = new SqlCommand(selectCommand3, objSqlConnection);
+
+            string selectCommand4 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 204 AND fromUnit = '" + comboSection.SelectedValue + "'";
+            SqlCommand objSelectCommand4 = new SqlCommand(selectCommand4, objSqlConnection);
+
+            objSqlConnection.Open();
+            SqlDataReader dr1 = objSelectCommand1.ExecuteReader();
+            while (dr1.Read())
+            {
+                label18.Text = dr1[0].ToString();
+            }
+            objSqlConnection.Close();
+            objSqlConnection.Open();
+            SqlDataReader dr2 = objSelectCommand2.ExecuteReader();
+            while (dr2.Read())
+            {
+                label19.Text = dr2[0].ToString();
+            }
+            objSqlConnection.Close();
+            objSqlConnection.Open();
+            SqlDataReader dr3 = objSelectCommand3.ExecuteReader();
+            while (dr3.Read())
+            {
+                label17.Text = dr3[0].ToString();
+            }
+
+            objSqlConnection.Close();
+            objSqlConnection.Open();
+            SqlDataReader dr4 = objSelectCommand4.ExecuteReader();
+            while (dr4.Read())
+            {
+                label20.Text = dr4[0].ToString();
+            }
+            objSqlConnection.Close();
+            chardefault(checked((int)(Convert.ToUInt32(label17.Text))), checked((int)(Convert.ToUInt32(label20.Text))), checked((int)(Convert.ToUInt32(label19.Text))), checked((int)(Convert.ToUInt32(label18.Text))));
+        }
+
+        private void btnSerachGID_Click(object sender, EventArgs e)
+        {
+            StringBuilder SearchStatement = new StringBuilder();
+
+            SearchStatement.Clear();
+            if (txtGrievnace.Text.Length > 0)
+            {
+                if (SearchStatement.Length > 0)
+                {
+                    SearchStatement.Append(" and ");
+                }
+                SearchStatement.Append("BillNumber like '%" + txtGrievnace.Text + "%'");
+            }
+            else
+                MessageBox.Show("Pleas write the Grievance No.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            grievanceTrackBindingSource.Filter = SearchStatement.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            grievanceTrackBindingSource.Filter = "";
+            comboAction.SelectedIndex = 0;
+            comboSection.SelectedIndex = 0;
+            chardefault(0,0,0,0);
+            label17.Text = "00";
+            label18.Text = "00";
+            label19.Text = "00";
+            label20.Text = "00";
         }
     }
 }

@@ -223,13 +223,14 @@ namespace MANUUFinance
             btnForward.Enabled = true;
             retrivedata = false;
             comboAction.SelectedIndex = 0;
+            Load_datagridview();
         }
 
         private void btnresponse_Click(object sender, EventArgs e)
         {
             if (retrivedata)
             {
-                Emailsend objectemailsend = new Emailsend(Convert.ToString(txtEmail.Text), Convert.ToInt32(txtEnrollment.Text), Convert.ToInt32(label17.Text));
+                Emailsend objectemailsend = new Emailsend(Convert.ToString(txtEmail.Text), Convert.ToInt32(txtEnrollment.Text), Convert.ToInt32(label17.Text), findSection());
                 objectemailsend.ShowDialog();
                 clearthebox();
             }

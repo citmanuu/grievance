@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +48,11 @@
             this.grievanceDataSet1 = new MANUUFinance.GrievanceDataSet1();
             this.label1 = new System.Windows.Forms.Label();
             this.grievanceTrackTableAdapter = new MANUUFinance.GrievanceDataSet1TableAdapters.GrievanceTrackTableAdapter();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGrievnace = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnPreview = new System.Windows.Forms.Button();
-            this.Search = new System.Windows.Forms.Button();
+            this.btnSerachGID = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.comboSection = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboAction = new System.Windows.Forms.ComboBox();
@@ -60,16 +63,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnfilter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.grievanceReportChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceTrackBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grievanceReportChart)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -170,28 +187,13 @@
             // 
             this.grievanceTrackTableAdapter.ClearBeforeFill = true;
             // 
-            // chart1
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(35, 341);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(743, 180);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.txtGrievnace);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnPreview);
-            this.groupBox1.Controls.Add(this.Search);
+            this.groupBox1.Controls.Add(this.btnSerachGID);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.comboSection);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboAction);
@@ -200,17 +202,17 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Teal;
             this.groupBox1.Location = new System.Drawing.Point(35, 246);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(659, 89);
+            this.groupBox1.Size = new System.Drawing.Size(743, 89);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
-            // textBox1
+            // txtGrievnace
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 22);
-            this.textBox1.TabIndex = 7;
+            this.txtGrievnace.Location = new System.Drawing.Point(124, 51);
+            this.txtGrievnace.Name = "txtGrievnace";
+            this.txtGrievnace.Size = new System.Drawing.Size(146, 22);
+            this.txtGrievnace.TabIndex = 7;
             // 
             // label5
             // 
@@ -221,23 +223,25 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Grievance Id";
             // 
-            // btnPreview
+            // btnSerachGID
             // 
-            this.btnPreview.Location = new System.Drawing.Point(290, 50);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(106, 23);
-            this.btnPreview.TabIndex = 5;
-            this.btnPreview.Text = "filter";
-            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnSerachGID.Location = new System.Drawing.Point(290, 50);
+            this.btnSerachGID.Name = "btnSerachGID";
+            this.btnSerachGID.Size = new System.Drawing.Size(106, 23);
+            this.btnSerachGID.TabIndex = 5;
+            this.btnSerachGID.Text = "filter";
+            this.btnSerachGID.UseVisualStyleBackColor = true;
+            this.btnSerachGID.Click += new System.EventHandler(this.btnSerachGID_Click);
             // 
-            // Search
+            // btnSearch
             // 
-            this.Search.Location = new System.Drawing.Point(564, 21);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 23);
-            this.Search.TabIndex = 4;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(564, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // comboSection
             // 
@@ -316,26 +320,60 @@
             this.btnfilter.TabIndex = 8;
             this.btnfilter.Text = "Filter";
             this.btnfilter.UseVisualStyleBackColor = true;
+            this.btnfilter.Click += new System.EventHandler(this.btnfilter_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label18, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 4, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(531, 537);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(392, 341);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(247, 107);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 116);
             this.tableLayoutPanel1.TabIndex = 9;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Section Name :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Total No.";
             // 
             // label6
             // 
@@ -347,39 +385,174 @@
             this.label6.Text = "Type ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 16);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Section Name ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 16);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Total No.";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(703, 650);
+            this.button1.Location = new System.Drawing.Point(701, 496);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(130, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 16);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Forward";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(205, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 16);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Open";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(269, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 16);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Closed";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(343, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 16);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Pending";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(130, 36);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 16);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "None";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(205, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 16);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "None";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(269, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 16);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "None";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(343, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 16);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "None";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(130, 73);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(24, 16);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "00";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(205, 73);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(24, 16);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "00";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(269, 73);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(24, 16);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "00";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(343, 73);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(24, 16);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "00";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(645, 22);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // grievanceReportChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.grievanceReportChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Action";
+            this.grievanceReportChart.Legends.Add(legend1);
+            this.grievanceReportChart.Location = new System.Drawing.Point(35, 339);
+            this.grievanceReportChart.Name = "grievanceReportChart";
+            series1.ChartArea = "ChartArea1";
+            series1.LabelToolTip = "Forward";
+            series1.Legend = "Action";
+            series1.Name = "Forward";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Action";
+            series2.LegendToolTip = "Pending";
+            series2.Name = "Pending";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Action";
+            series3.Name = "Closed";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Action";
+            series4.Name = "Open";
+            series4.YValuesPerPoint = 2;
+            this.grievanceReportChart.Series.Add(series1);
+            this.grievanceReportChart.Series.Add(series2);
+            this.grievanceReportChart.Series.Add(series3);
+            this.grievanceReportChart.Series.Add(series4);
+            this.grievanceReportChart.Size = new System.Drawing.Size(351, 218);
+            this.grievanceReportChart.TabIndex = 11;
+            this.grievanceReportChart.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Grievance Track";
+            this.grievanceReportChart.Titles.Add(title1);
             // 
             // GrievanceTrack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 675);
+            this.ClientSize = new System.Drawing.Size(816, 694);
+            this.Controls.Add(this.grievanceReportChart);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnfilter);
@@ -388,7 +561,6 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "GrievanceTrack";
@@ -399,11 +571,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceTrackBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grievanceReportChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,25 +595,38 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn remarksDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn forwardedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboSection;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboAction;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPreview;
-        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button btnSerachGID;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label From;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnfilter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGrievnace;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grievanceReportChart;
     }
 }

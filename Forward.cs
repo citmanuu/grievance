@@ -97,6 +97,7 @@ namespace MANUUFinance
         {
             if (retrivedata)
             {
+
                 //Connection String
                 string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
                 //Instantiate SQL Connection
