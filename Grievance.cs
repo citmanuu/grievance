@@ -27,6 +27,7 @@ namespace MANUUFinance
         {
             InitializeComponent();
             this.UserId = UserId;
+            btnAttachment.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

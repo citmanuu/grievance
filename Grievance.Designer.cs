@@ -91,6 +91,7 @@
             this.grievanceViewTableAdapter = new MANUUFinance.GrievanceDataSetTableAdapters.grievanceViewTableAdapter();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.btnAttachment = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGrievance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceViewBindingSource)).BeginInit();
@@ -582,7 +583,7 @@
             // comboAction
             // 
             this.comboAction.FormattingEnabled = true;
-            this.comboAction.Location = new System.Drawing.Point(776, 385);
+            this.comboAction.Location = new System.Drawing.Point(776, 401);
             this.comboAction.Margin = new System.Windows.Forms.Padding(2);
             this.comboAction.Name = "comboAction";
             this.comboAction.Size = new System.Drawing.Size(142, 21);
@@ -593,7 +594,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(714, 390);
+            this.label11.Location = new System.Drawing.Point(714, 406);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 15);
@@ -688,11 +689,22 @@
             this.label19.TabIndex = 64;
             this.label19.Text = "None";
             // 
+            // btnAttachment
+            // 
+            this.btnAttachment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttachment.Location = new System.Drawing.Point(823, 366);
+            this.btnAttachment.Name = "btnAttachment";
+            this.btnAttachment.Size = new System.Drawing.Size(94, 30);
+            this.btnAttachment.TabIndex = 65;
+            this.btnAttachment.Text = "Attachment";
+            this.btnAttachment.UseVisualStyleBackColor = true;
+            // 
             // Grievance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 707);
+            this.Controls.Add(this.btnAttachment);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.groupBox7);
@@ -790,5 +802,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn forwardedRemarks;
+        private System.Windows.Forms.Button btnAttachment;
     }
 }
