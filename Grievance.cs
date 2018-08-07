@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Author     : Md Shaoib Alam
+// Department : Center for Information Technology 
+
 namespace MANUUFinance
 {
     public partial class Grievance : Form
@@ -147,10 +150,11 @@ namespace MANUUFinance
                 txtMobileNumber.Text = DGVGrievance.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
                 txtDescription.Text = DGVGrievance.Rows[e.RowIndex].Cells[9].FormattedValue.ToString();
                 GlobalId = Convert.ToInt32(DGVGrievance.Rows[e.RowIndex].Cells[10].FormattedValue.ToString());
+                richTextRemarks.Text = DGVGrievance.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
                 retrivedata = true;
                 statusdetail();
-                richTextRemarks.Enabled = false;
-                txtDescription.Enabled = false;
+                //richTextRemarks.Enabled = false;
+                //txtDescription.Enabled = false;
                 lockbutton();
             }
         }

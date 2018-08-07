@@ -68,7 +68,7 @@ namespace MANUUFinance
             //Instantiate SQL Connection
             SqlConnection objSqlConnection = new SqlConnection(cs);
             //Prepare Update String
-            string selectCommand = "SELECT sectionId, sectionName FROM [Grievance].[dbo].[SectionUnit]";
+            string selectCommand = "SELECT sectionId, sectionName FROM [Grievance].[dbo].[SectionUnit] where sectionId != '"+ fromUnit + "'";
             SqlCommand objSelectCommand = new SqlCommand(selectCommand, objSqlConnection);
             try
             {
@@ -148,7 +148,7 @@ namespace MANUUFinance
             //Instantiate SQL Connection
             SqlConnection objSqlConnection = new SqlConnection(cs);
             //Prepare Update String
-            string insertCommand = " update Grievances set forwardedRemarks = @remarks, Gstatus= 203 where GID = '"+ GID + "'";
+            string insertCommand = " update Grievances set forwardedRemarks = CONCAT('"+ richTextRemarks.Text + "',forwardedRemarks), Gstatus= 203, sectionID = '"+ comboSection.SelectedValue + "' where GID = '" + GID + "'";
             SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
 
             objInsertCommand.Parameters.AddWithValue("@remarks", richTextRemarks.Text);

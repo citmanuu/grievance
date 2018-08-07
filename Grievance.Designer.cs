@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -48,6 +48,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGVGrievance = new System.Windows.Forms.DataGridView();
+            this.GID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnrollmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YearOfAdmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.center = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forwardedRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grievanceViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grievanceDataSet = new MANUUFinance.GrievanceDataSet();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,18 +91,6 @@
             this.grievanceViewTableAdapter = new MANUUFinance.GrievanceDataSetTableAdapters.grievanceViewTableAdapter();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.GID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnrollmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.YearOfAdmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.center = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.forwardedRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGrievance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceViewBindingSource)).BeginInit();
@@ -273,8 +273,8 @@
             // 
             this.DGVGrievance.AllowUserToAddRows = false;
             this.DGVGrievance.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.DGVGrievance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DGVGrievance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVGrievance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGrievance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GID,
@@ -295,6 +295,90 @@
             this.DGVGrievance.Size = new System.Drawing.Size(278, 233);
             this.DGVGrievance.TabIndex = 47;
             this.DGVGrievance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGrievance_CellContentClick);
+            // 
+            // GID
+            // 
+            this.GID.DataPropertyName = "GID";
+            this.GID.HeaderText = "GID";
+            this.GID.Name = "GID";
+            this.GID.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "UserName";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // EnrollmentID
+            // 
+            this.EnrollmentID.DataPropertyName = "EnrollmentID";
+            this.EnrollmentID.HeaderText = "EnrollmentID";
+            this.EnrollmentID.Name = "EnrollmentID";
+            this.EnrollmentID.ReadOnly = true;
+            // 
+            // YearOfAdmission
+            // 
+            this.YearOfAdmission.DataPropertyName = "YearOfAdmission";
+            this.YearOfAdmission.HeaderText = "YearOfAdmission";
+            this.YearOfAdmission.Name = "YearOfAdmission";
+            this.YearOfAdmission.ReadOnly = true;
+            // 
+            // mobileNumber
+            // 
+            this.mobileNumber.DataPropertyName = "mobileNumber";
+            this.mobileNumber.HeaderText = "mobileNumber";
+            this.mobileNumber.Name = "mobileNumber";
+            this.mobileNumber.ReadOnly = true;
+            // 
+            // courseName
+            // 
+            this.courseName.DataPropertyName = "courseName";
+            this.courseName.HeaderText = "courseName";
+            this.courseName.Name = "courseName";
+            this.courseName.ReadOnly = true;
+            // 
+            // emailID
+            // 
+            this.emailID.DataPropertyName = "emailID";
+            this.emailID.HeaderText = "emailID";
+            this.emailID.Name = "emailID";
+            this.emailID.ReadOnly = true;
+            // 
+            // DOB
+            // 
+            this.DOB.DataPropertyName = "DOB";
+            this.DOB.HeaderText = "DOB";
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = true;
+            // 
+            // center
+            // 
+            this.center.DataPropertyName = "center";
+            this.center.HeaderText = "center";
+            this.center.Name = "center";
+            this.center.ReadOnly = true;
+            // 
+            // GDescription
+            // 
+            this.GDescription.DataPropertyName = "GDescription";
+            this.GDescription.HeaderText = "GDescription";
+            this.GDescription.Name = "GDescription";
+            this.GDescription.ReadOnly = true;
+            // 
+            // Gstatus
+            // 
+            this.Gstatus.DataPropertyName = "Gstatus";
+            this.Gstatus.HeaderText = "Gstatus";
+            this.Gstatus.Name = "Gstatus";
+            this.Gstatus.ReadOnly = true;
+            // 
+            // forwardedRemarks
+            // 
+            this.forwardedRemarks.DataPropertyName = "forwardedRemarks";
+            this.forwardedRemarks.HeaderText = "forwardedRemarks";
+            this.forwardedRemarks.Name = "forwardedRemarks";
+            this.forwardedRemarks.ReadOnly = true;
             // 
             // grievanceViewBindingSource
             // 
@@ -542,6 +626,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox6.Location = new System.Drawing.Point(0, 668);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(834, 29);
@@ -550,6 +635,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.label14);
             this.groupBox7.Location = new System.Drawing.Point(832, 668);
@@ -561,20 +647,21 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(74, 13);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(53, 13);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 13);
+            this.label15.Size = new System.Drawing.Size(76, 13);
             this.label15.TabIndex = 64;
             this.label15.Text = "MANUU CIT";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(5, 13);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 63;
-            this.label14.Text = "Powered By :";
             // 
             // grievanceViewTableAdapter
             // 
@@ -600,90 +687,6 @@
             this.label19.Size = new System.Drawing.Size(51, 20);
             this.label19.TabIndex = 64;
             this.label19.Text = "None";
-            // 
-            // GID
-            // 
-            this.GID.DataPropertyName = "GID";
-            this.GID.HeaderText = "GID";
-            this.GID.Name = "GID";
-            this.GID.ReadOnly = true;
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            // 
-            // EnrollmentID
-            // 
-            this.EnrollmentID.DataPropertyName = "EnrollmentID";
-            this.EnrollmentID.HeaderText = "EnrollmentID";
-            this.EnrollmentID.Name = "EnrollmentID";
-            this.EnrollmentID.ReadOnly = true;
-            // 
-            // YearOfAdmission
-            // 
-            this.YearOfAdmission.DataPropertyName = "YearOfAdmission";
-            this.YearOfAdmission.HeaderText = "YearOfAdmission";
-            this.YearOfAdmission.Name = "YearOfAdmission";
-            this.YearOfAdmission.ReadOnly = true;
-            // 
-            // mobileNumber
-            // 
-            this.mobileNumber.DataPropertyName = "mobileNumber";
-            this.mobileNumber.HeaderText = "mobileNumber";
-            this.mobileNumber.Name = "mobileNumber";
-            this.mobileNumber.ReadOnly = true;
-            // 
-            // courseName
-            // 
-            this.courseName.DataPropertyName = "courseName";
-            this.courseName.HeaderText = "courseName";
-            this.courseName.Name = "courseName";
-            this.courseName.ReadOnly = true;
-            // 
-            // emailID
-            // 
-            this.emailID.DataPropertyName = "emailID";
-            this.emailID.HeaderText = "emailID";
-            this.emailID.Name = "emailID";
-            this.emailID.ReadOnly = true;
-            // 
-            // DOB
-            // 
-            this.DOB.DataPropertyName = "DOB";
-            this.DOB.HeaderText = "DOB";
-            this.DOB.Name = "DOB";
-            this.DOB.ReadOnly = true;
-            // 
-            // center
-            // 
-            this.center.DataPropertyName = "center";
-            this.center.HeaderText = "center";
-            this.center.Name = "center";
-            this.center.ReadOnly = true;
-            // 
-            // GDescription
-            // 
-            this.GDescription.DataPropertyName = "GDescription";
-            this.GDescription.HeaderText = "GDescription";
-            this.GDescription.Name = "GDescription";
-            this.GDescription.ReadOnly = true;
-            // 
-            // Gstatus
-            // 
-            this.Gstatus.DataPropertyName = "Gstatus";
-            this.Gstatus.HeaderText = "Gstatus";
-            this.Gstatus.Name = "Gstatus";
-            this.Gstatus.ReadOnly = true;
-            // 
-            // forwardedRemarks
-            // 
-            this.forwardedRemarks.DataPropertyName = "forwardedRemarks";
-            this.forwardedRemarks.HeaderText = "forwardedRemarks";
-            this.forwardedRemarks.Name = "forwardedRemarks";
-            this.forwardedRemarks.ReadOnly = true;
             // 
             // Grievance
             // 

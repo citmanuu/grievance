@@ -130,7 +130,7 @@ namespace MANUUFinance
             //Instantiate SQL Connection
             SqlConnection objSqlConnection = new SqlConnection(cs);
             //Prepare Update String
-            string insertCommand = " update Grievances set forwardedRemarks = @remarks, Gstatus= 202 where GID = '" + gid + "'";
+            string insertCommand = " update Grievances set forwardedRemarks = CONCAT('"+ rtbBody.Text + "',forwardedRemarks ), Gstatus= 202 where GID = '" + gid + "'";
             SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
 
             objInsertCommand.Parameters.AddWithValue("@remarks", rtbBody.Text);

@@ -34,10 +34,15 @@ namespace MANUUFinance
 
         private void chardefault(int a, int b, int c, int d)
         {
-            grievanceReportChart.Series["Forward"].Points.AddXY("", a);
-            grievanceReportChart.Series["Pending"].Points.AddXY("", b);
-            grievanceReportChart.Series["Closed"].Points.AddXY("", c);
-            grievanceReportChart.Series["Open"].Points.AddXY("", d);
+                grievanceReportChart.Series.Clear();
+            if(a>=0)
+                grievanceReportChart.Series["Forward"].Points.AddXY("", a);
+            if (b>=0)
+                grievanceReportChart.Series["Pending"].Points.AddXY("", b);
+            if(c>=0)
+                grievanceReportChart.Series["Closed"].Points.AddXY("", c);
+            if(d>=0)
+                grievanceReportChart.Series["Open"].Points.AddXY("", d);
         }
 
         private void combopreparationforsectionID()
