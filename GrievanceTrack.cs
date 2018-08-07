@@ -34,15 +34,20 @@ namespace MANUUFinance
 
         private void chardefault(int a, int b, int c, int d)
         {
-                grievanceReportChart.Series.Clear();
-            if(a>=0)
-                grievanceReportChart.Series["Forward"].Points.AddXY("", a);
-            if (b>=0)
-                grievanceReportChart.Series["Pending"].Points.AddXY("", b);
-            if(c>=0)
-                grievanceReportChart.Series["Closed"].Points.AddXY("", c);
-            if(d>=0)
+                clearchar();
                 grievanceReportChart.Series["Open"].Points.AddXY("", d);
+                grievanceReportChart.Series["Forward"].Points.AddXY("", a);
+                grievanceReportChart.Series["Pending"].Points.AddXY("", b);
+                grievanceReportChart.Series["Closed"].Points.AddXY("", c);
+               
+        }
+
+        private void clearchar()
+        {
+            grievanceReportChart.Series["Open"].Points.Clear();
+            grievanceReportChart.Series["Forward"].Points.Clear();
+            grievanceReportChart.Series["Pending"].Points.Clear();
+            grievanceReportChart.Series["Closed"].Points.Clear();
         }
 
         private void combopreparationforsectionID()
@@ -214,7 +219,7 @@ namespace MANUUFinance
             {
                 label20.Text = dr4[0].ToString();
             }
-            objSqlConnection.Close();
+            objSqlConnection.Close();            
             chardefault(checked((int)(Convert.ToUInt32(label17.Text))), checked((int)(Convert.ToUInt32(label20.Text))), checked((int)(Convert.ToUInt32(label19.Text))), checked((int)(Convert.ToUInt32(label18.Text))));
         }
 
