@@ -34,7 +34,7 @@ namespace MANUUFinance
 
         private void chardefault(int a, int b, int c, int d)
         {
-                clearchar();
+                clearchart();
                 grievanceReportChart.Series["Open"].Points.AddXY("", d);
                 grievanceReportChart.Series["Forward"].Points.AddXY("", a);
                 grievanceReportChart.Series["Pending"].Points.AddXY("", b);
@@ -42,7 +42,7 @@ namespace MANUUFinance
                
         }
 
-        private void clearchar()
+        private void clearchart()
         {
             grievanceReportChart.Series["Open"].Points.Clear();
             grievanceReportChart.Series["Forward"].Points.Clear();
