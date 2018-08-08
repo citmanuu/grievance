@@ -154,8 +154,8 @@ namespace MANUUFinance
                 richTextRemarks.Text = DGVGrievance.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
                 retrivedata = true;
                 statusdetail();
-                //richTextRemarks.Enabled = false;
-                //txtDescription.Enabled = false;
+                richTextRemarks.ReadOnly = true;
+                txtDescription.ReadOnly = true;
                 lockbutton();
             }
         }

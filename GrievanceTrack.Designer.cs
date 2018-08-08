@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.txtGrievnace = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSerachGID = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboSection = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -192,7 +192,7 @@
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.txtGrievnace);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnSerachGID);
+            this.groupBox1.Controls.Add(this.btnPreview);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.comboSection);
             this.groupBox1.Controls.Add(this.label3);
@@ -233,15 +233,15 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Grievance Id";
             // 
-            // btnSerachGID
+            // btnPreview
             // 
-            this.btnSerachGID.Location = new System.Drawing.Point(290, 50);
-            this.btnSerachGID.Name = "btnSerachGID";
-            this.btnSerachGID.Size = new System.Drawing.Size(106, 23);
-            this.btnSerachGID.TabIndex = 5;
-            this.btnSerachGID.Text = "filter";
-            this.btnSerachGID.UseVisualStyleBackColor = true;
-            this.btnSerachGID.Click += new System.EventHandler(this.btnSerachGID_Click);
+            this.btnPreview.Location = new System.Drawing.Point(290, 50);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(96, 23);
+            this.btnPreview.TabIndex = 5;
+            this.btnPreview.Text = "Preview";
+            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnSearch
             // 
@@ -340,7 +340,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
@@ -382,7 +382,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 32);
+            this.label7.Size = new System.Drawing.Size(105, 32);
             this.label7.TabIndex = 1;
             this.label7.Text = "Section Name :";
             // 
@@ -398,7 +398,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(127, 3);
+            this.label9.Location = new System.Drawing.Point(121, 3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 16);
             this.label9.TabIndex = 3;
@@ -407,7 +407,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(202, 3);
+            this.label10.Location = new System.Drawing.Point(196, 3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 16);
             this.label10.TabIndex = 4;
@@ -416,7 +416,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(266, 3);
+            this.label11.Location = new System.Drawing.Point(260, 3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 16);
             this.label11.TabIndex = 5;
@@ -425,7 +425,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(340, 3);
+            this.label12.Location = new System.Drawing.Point(334, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 16);
             this.label12.TabIndex = 6;
@@ -434,7 +434,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(127, 36);
+            this.label13.Location = new System.Drawing.Point(121, 36);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 16);
             this.label13.TabIndex = 7;
@@ -443,7 +443,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(202, 36);
+            this.label14.Location = new System.Drawing.Point(196, 36);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(45, 16);
             this.label14.TabIndex = 8;
@@ -452,7 +452,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(266, 36);
+            this.label15.Location = new System.Drawing.Point(260, 36);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 16);
             this.label15.TabIndex = 9;
@@ -461,7 +461,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(340, 36);
+            this.label16.Location = new System.Drawing.Point(334, 36);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(45, 16);
             this.label16.TabIndex = 10;
@@ -470,7 +470,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(127, 73);
+            this.label17.Location = new System.Drawing.Point(121, 73);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(24, 16);
             this.label17.TabIndex = 11;
@@ -479,7 +479,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(202, 73);
+            this.label18.Location = new System.Drawing.Point(196, 73);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 16);
             this.label18.TabIndex = 12;
@@ -488,7 +488,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(266, 73);
+            this.label19.Location = new System.Drawing.Point(260, 73);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(24, 16);
             this.label19.TabIndex = 13;
@@ -497,7 +497,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(340, 73);
+            this.label20.Location = new System.Drawing.Point(334, 73);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 16);
             this.label20.TabIndex = 14;
@@ -515,37 +515,37 @@
             // 
             // grievanceReportChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.grievanceReportChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Action";
-            this.grievanceReportChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.grievanceReportChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Action";
+            this.grievanceReportChart.Legends.Add(legend2);
             this.grievanceReportChart.Location = new System.Drawing.Point(35, 339);
             this.grievanceReportChart.Name = "grievanceReportChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Action";
-            series1.Name = "Open";
-            series1.YValuesPerPoint = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.LabelToolTip = "Forward";
-            series2.Legend = "Action";
-            series2.Name = "Forward";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Action";
-            series3.LegendToolTip = "Pending";
-            series3.Name = "Pending";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Action";
-            series4.Name = "Closed";
-            this.grievanceReportChart.Series.Add(series1);
-            this.grievanceReportChart.Series.Add(series2);
-            this.grievanceReportChart.Series.Add(series3);
-            this.grievanceReportChart.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Action";
+            series5.Name = "Open";
+            series5.YValuesPerPoint = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.LabelToolTip = "Forward";
+            series6.Legend = "Action";
+            series6.Name = "Forward";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Action";
+            series7.LegendToolTip = "Pending";
+            series7.Name = "Pending";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Action";
+            series8.Name = "Closed";
+            this.grievanceReportChart.Series.Add(series5);
+            this.grievanceReportChart.Series.Add(series6);
+            this.grievanceReportChart.Series.Add(series7);
+            this.grievanceReportChart.Series.Add(series8);
             this.grievanceReportChart.Size = new System.Drawing.Size(351, 218);
             this.grievanceReportChart.TabIndex = 11;
             this.grievanceReportChart.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Grievance Track";
-            this.grievanceReportChart.Titles.Add(title1);
+            title2.Name = "Title1";
+            title2.Text = "Grievance Track";
+            this.grievanceReportChart.Titles.Add(title2);
             // 
             // GrievanceTrack
             // 
@@ -600,7 +600,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboAction;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSerachGID;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -628,5 +627,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataVisualization.Charting.Chart grievanceReportChart;
+        private System.Windows.Forms.Button btnPreview;
     }
 }

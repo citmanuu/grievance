@@ -69,3 +69,4 @@ E:\grievance\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 E:\grievance\obj\Debug\GrievanceManuu.csprojAssemblyReference.cache
 E:\grievance\obj\Debug\MANUUFinance.Emailsend.resources
 E:\grievance\obj\Debug\MANUUFinance.GrievanceTrack.resources
+E:\grievance\obj\Debug\MANUUFinance.Preview.resources

@@ -14,7 +14,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace MANUUFinance
 {
     public partial class GrievanceTrack : Form
-    { 
+    {
+        int GID;
         //Connection String
         string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
 
@@ -29,6 +30,7 @@ namespace MANUUFinance
             this.grievanceTrackTableAdapter.Fill(this.grievanceDataSet1.GrievanceTrack);
             combopreparationforaction();
             combopreparationforsectionID();
+            buildchart(0);
            
         }
 
@@ -171,74 +173,144 @@ namespace MANUUFinance
             {
                 MessageBox.Show("Exception");
             }
-            buildchart();
+            buildchart(1);
         }
 
-        private void buildchart()
+        private void buildchart(int check)
         {
            // Instantiate SQL Connection
             SqlConnection objSqlConnection = new SqlConnection(cs);
             // Prepare Update String
-            string selectCommand1 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 201 AND fromUnit = '"+comboSection.SelectedValue + "'";
-            SqlCommand objSelectCommand1 = new SqlCommand(selectCommand1, objSqlConnection);
-
-            string selectCommand2 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 202 AND fromUnit = '" + comboSection.SelectedValue + "'";
-            SqlCommand objSelectCommand2 = new SqlCommand(selectCommand2, objSqlConnection);
-
-            string selectCommand3 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 203 AND fromUnit = '" + comboSection.SelectedValue + "'";
-            SqlCommand objSelectCommand3 = new SqlCommand(selectCommand3, objSqlConnection);
-
-            string selectCommand4 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 204 AND fromUnit = '" + comboSection.SelectedValue + "'";
-            SqlCommand objSelectCommand4 = new SqlCommand(selectCommand4, objSqlConnection);
-
-            objSqlConnection.Open();
-            SqlDataReader dr1 = objSelectCommand1.ExecuteReader();
-            while (dr1.Read())
+            if(check == 0)
             {
-                label18.Text = dr1[0].ToString();
-            }
-            objSqlConnection.Close();
-            objSqlConnection.Open();
-            SqlDataReader dr2 = objSelectCommand2.ExecuteReader();
-            while (dr2.Read())
+                string selectCommand1 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 201";
+                SqlCommand objSelectCommand1 = new SqlCommand(selectCommand1, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr1 = objSelectCommand1.ExecuteReader();
+                while (dr1.Read())
+                {
+                    label18.Text = dr1[0].ToString();
+                }
+                objSqlConnection.Close();
+            }            
+            else
             {
-                label19.Text = dr2[0].ToString();
+                string selectCommand1 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 201 AND fromUnit = '" + comboSection.SelectedValue + "'";
+                SqlCommand objSelectCommand1 = new SqlCommand(selectCommand1, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr1 = objSelectCommand1.ExecuteReader();
+                while (dr1.Read())
+                {
+                    label18.Text = dr1[0].ToString();
+                }
+                objSqlConnection.Close();
             }
-            objSqlConnection.Close();
-            objSqlConnection.Open();
-            SqlDataReader dr3 = objSelectCommand3.ExecuteReader();
-            while (dr3.Read())
+            if (check == 0)
             {
-                label17.Text = dr3[0].ToString();
+                string selectCommand2 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 202";
+                SqlCommand objSelectCommand2 = new SqlCommand(selectCommand2, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr2 = objSelectCommand2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    label19.Text = dr2[0].ToString();
+                }
+                objSqlConnection.Close();
+            }
+            else
+            {
+                string selectCommand2 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 202 AND fromUnit = '" + comboSection.SelectedValue + "'";
+                SqlCommand objSelectCommand2 = new SqlCommand(selectCommand2, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr2 = objSelectCommand2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    label19.Text = dr2[0].ToString();
+                }
+                objSqlConnection.Close();
             }
 
-            objSqlConnection.Close();
-            objSqlConnection.Open();
-            SqlDataReader dr4 = objSelectCommand4.ExecuteReader();
-            while (dr4.Read())
+            if (check == 0)
             {
-                label20.Text = dr4[0].ToString();
+                string selectCommand3 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 203";
+                SqlCommand objSelectCommand3 = new SqlCommand(selectCommand3, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr3 = objSelectCommand3.ExecuteReader();
+                while (dr3.Read())
+                {
+                    label17.Text = dr3[0].ToString();
+                }
+                objSqlConnection.Close();
+
             }
-            objSqlConnection.Close();            
+            else
+            {
+                string selectCommand3 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 203 AND fromUnit = '" + comboSection.SelectedValue + "'";
+                SqlCommand objSelectCommand3 = new SqlCommand(selectCommand3, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr3 = objSelectCommand3.ExecuteReader();
+                while (dr3.Read())
+                {
+                    label17.Text = dr3[0].ToString();
+                }
+                objSqlConnection.Close();
+            }
+            if (check ==0)
+            {
+                string selectCommand4 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 204";
+                SqlCommand objSelectCommand4 = new SqlCommand(selectCommand4, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr4 = objSelectCommand4.ExecuteReader();
+                while (dr4.Read())
+                {
+                    label20.Text = dr4[0].ToString();
+                }
+                objSqlConnection.Close();
+            }
+            else
+            {
+                string selectCommand4 = "SELECT count(*) from [Grievance].[dbo].[GrievanceTrack] where action = 204 AND fromUnit = '" + comboSection.SelectedValue + "'";
+                SqlCommand objSelectCommand4 = new SqlCommand(selectCommand4, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr4 = objSelectCommand4.ExecuteReader();
+                while (dr4.Read())
+                {
+                    label20.Text = dr4[0].ToString();
+                }
+                objSqlConnection.Close();
+            }
+                        
             chardefault(checked((int)(Convert.ToUInt32(label17.Text))), checked((int)(Convert.ToUInt32(label20.Text))), checked((int)(Convert.ToUInt32(label19.Text))), checked((int)(Convert.ToUInt32(label18.Text))));
         }
 
-        private void btnSerachGID_Click(object sender, EventArgs e)
+        private void btnPreview_Click(object sender, EventArgs e)
         {
-            StringBuilder SearchStatement = new StringBuilder();
-
-            SearchStatement.Clear();
-            if (txtGrievnace.Text.Length > 0)
+            if (txtGrievnace.Text != "")
             {
-                if (SearchStatement.Length > 0)
+                SqlConnection objSqlConnection = new SqlConnection(cs);
+                // Prepare Update String
+                string selectCommand1 = "SELECT GID  from [Grievance].[dbo].[Grievances] where GID = '" + Convert.ToInt32(txtGrievnace.Text) + "'";
+                SqlCommand objSelectCommand1 = new SqlCommand(selectCommand1, objSqlConnection);
+                objSqlConnection.Open();
+                SqlDataReader dr1 = objSelectCommand1.ExecuteReader();
+                while (dr1.Read())
                 {
-                    SearchStatement.Append(" and ");
+                    GID = Convert.ToInt32(dr1[0]);
                 }
-                SearchStatement.Append("BillNumber like '%" + txtGrievnace.Text + "%'");
+                objSqlConnection.Close();
+                if (GID > 0)
+                {
+                    Preview objectPreview = new Preview(GID);
+                    objectPreview.ShowDialog();
+
+                }
+                else
+                    MessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
-                MessageBox.Show("Pleas write the Grievance No.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            grievanceTrackBindingSource.Filter = SearchStatement.ToString();
+                MessageBox.Show("Please enter the Grievance ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -251,6 +323,7 @@ namespace MANUUFinance
             label18.Text = "00";
             label19.Text = "00";
             label20.Text = "00";
+            buildchart(0);
         }
     }
 }

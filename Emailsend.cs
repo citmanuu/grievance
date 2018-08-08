@@ -87,7 +87,7 @@ namespace MANUUFinance
 
         private void updategrievancetrack()
         {
-            if (retrivedata)
+            if (retrivedata && enroll !=0 )
             {
 
                 //Connection String
@@ -124,37 +124,42 @@ namespace MANUUFinance
 
         private void updatethedetail()
         {
+            if (enroll != 0)
+            {
+                //Connection String
+                string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
+                //Instantiate SQL Connection
+                SqlConnection objSqlConnection = new SqlConnection(cs);
+                //Prepare Update String
+                string insertCommand = " update Grievances set forwardedRemarks = CONCAT('" + rtbBody.Text + "',forwardedRemarks ), Gstatus= 202 where GID = '" + gid + "'";
+                SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
 
-            //Connection String
-            string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
-            //Instantiate SQL Connection
-            SqlConnection objSqlConnection = new SqlConnection(cs);
-            //Prepare Update String
-            string insertCommand = " update Grievances set forwardedRemarks = CONCAT('"+ rtbBody.Text + "',forwardedRemarks ), Gstatus= 202 where GID = '" + gid + "'";
-            SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
-
-            objInsertCommand.Parameters.AddWithValue("@remarks", rtbBody.Text);
-            try
-            {
-                objSqlConnection.Open();
-                objInsertCommand.ExecuteNonQuery();
-                MessageBox.Show("Record Sent Successfully", "Record Addition Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("The following error occured : " + ex.Message, "Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                objSqlConnection.Close();
-            }
+                objInsertCommand.Parameters.AddWithValue("@remarks", rtbBody.Text);
+                try
+                {
+                    objSqlConnection.Open();
+                    objInsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Sent Successfully", "Record Addition Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("The following error occured : " + ex.Message, "Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    objSqlConnection.Close();
+                }
+            }            
         }
 
         private void Emailsend_Load(object sender, EventArgs e)
         {
             txtRecipientEmail.Enabled = false;
             txtRecipientEmail.Text = UserEmail;
-            txtSubject.Text = "Responds of the Ticket # " + gid ;
+            if (enroll != 0)
+                txtSubject.Text = "Respons for Ticket # " + gid;
+            else
+                txtSubject.Text = "Immediate Respons for Ticket #" + gid;
         }
 
         private void btnBrowseFile_Click(object sender, EventArgs e)

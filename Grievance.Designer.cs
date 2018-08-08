@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -274,8 +274,8 @@
             // 
             this.DGVGrievance.AllowUserToAddRows = false;
             this.DGVGrievance.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.DGVGrievance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DGVGrievance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVGrievance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGrievance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GID,
@@ -301,6 +301,7 @@
             // 
             this.GID.DataPropertyName = "GID";
             this.GID.HeaderText = "GID";
+            this.GID.MinimumWidth = 50;
             this.GID.Name = "GID";
             this.GID.ReadOnly = true;
             // 
@@ -310,11 +311,13 @@
             this.UserName.HeaderText = "UserName";
             this.UserName.Name = "UserName";
             this.UserName.ReadOnly = true;
+            this.UserName.Visible = false;
             // 
             // EnrollmentID
             // 
             this.EnrollmentID.DataPropertyName = "EnrollmentID";
             this.EnrollmentID.HeaderText = "EnrollmentID";
+            this.EnrollmentID.MinimumWidth = 50;
             this.EnrollmentID.Name = "EnrollmentID";
             this.EnrollmentID.ReadOnly = true;
             // 
@@ -324,6 +327,7 @@
             this.YearOfAdmission.HeaderText = "YearOfAdmission";
             this.YearOfAdmission.Name = "YearOfAdmission";
             this.YearOfAdmission.ReadOnly = true;
+            this.YearOfAdmission.Visible = false;
             // 
             // mobileNumber
             // 
@@ -331,6 +335,7 @@
             this.mobileNumber.HeaderText = "mobileNumber";
             this.mobileNumber.Name = "mobileNumber";
             this.mobileNumber.ReadOnly = true;
+            this.mobileNumber.Visible = false;
             // 
             // courseName
             // 
@@ -338,6 +343,7 @@
             this.courseName.HeaderText = "courseName";
             this.courseName.Name = "courseName";
             this.courseName.ReadOnly = true;
+            this.courseName.Visible = false;
             // 
             // emailID
             // 
@@ -345,6 +351,7 @@
             this.emailID.HeaderText = "emailID";
             this.emailID.Name = "emailID";
             this.emailID.ReadOnly = true;
+            this.emailID.Visible = false;
             // 
             // DOB
             // 
@@ -352,6 +359,7 @@
             this.DOB.HeaderText = "DOB";
             this.DOB.Name = "DOB";
             this.DOB.ReadOnly = true;
+            this.DOB.Visible = false;
             // 
             // center
             // 
@@ -359,6 +367,7 @@
             this.center.HeaderText = "center";
             this.center.Name = "center";
             this.center.ReadOnly = true;
+            this.center.Visible = false;
             // 
             // GDescription
             // 
@@ -373,6 +382,7 @@
             this.Gstatus.HeaderText = "Gstatus";
             this.Gstatus.Name = "Gstatus";
             this.Gstatus.ReadOnly = true;
+            this.Gstatus.Visible = false;
             // 
             // forwardedRemarks
             // 
@@ -380,6 +390,7 @@
             this.forwardedRemarks.HeaderText = "forwardedRemarks";
             this.forwardedRemarks.Name = "forwardedRemarks";
             this.forwardedRemarks.ReadOnly = true;
+            this.forwardedRemarks.Visible = false;
             // 
             // grievanceViewBindingSource
             // 
@@ -790,6 +801,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnAttachment;
         private System.Windows.Forms.DataGridViewTextBoxColumn GID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnrollmentID;
@@ -802,6 +814,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn forwardedRemarks;
-        private System.Windows.Forms.Button btnAttachment;
     }
 }
