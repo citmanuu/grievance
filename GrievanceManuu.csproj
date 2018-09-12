@@ -115,19 +115,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs">
+    <Compile Include="frmAdministrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="frmAdministrator.Designer.cs">
+      <DependentUpon>frmAdministrator.cs</DependentUpon>
     </Compile>
     <Compile Include="AdministratorLogin.cs" />
     <Compile Include="AdminLogin.cs" />
-    <Compile Include="Authentication.cs">
+    <Compile Include="frmAuthentication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authentication.Designer.cs">
-      <DependentUpon>Authentication.cs</DependentUpon>
+    <Compile Include="frmAuthentication.Designer.cs">
+      <DependentUpon>frmAuthentication.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Dapper\SqlMapper.cs" />
@@ -143,11 +143,17 @@
     <Compile Include="Forward.Designer.cs">
       <DependentUpon>Forward.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grievance.cs">
+    <Compile Include="frmAttachmentImages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grievance.Designer.cs">
-      <DependentUpon>Grievance.cs</DependentUpon>
+    <Compile Include="frmAttachmentImages.Designer.cs">
+      <DependentUpon>frmAttachmentImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrievance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrievance.Designer.cs">
+      <DependentUpon>frmGrievance.cs</DependentUpon>
     </Compile>
     <Compile Include="GrievanceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -159,11 +165,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrievanceDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GrievanceTrack.cs">
+    <Compile Include="frmGrievanceTrack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GrievanceTrack.Designer.cs">
-      <DependentUpon>GrievanceTrack.cs</DependentUpon>
+    <Compile Include="frmGrievanceTrack.Designer.cs">
+      <DependentUpon>frmGrievanceTrack.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -171,12 +177,13 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="imagesAvailable.cs" />
     <Compile Include="LOV.cs" />
-    <Compile Include="Preview.cs">
+    <Compile Include="frmPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preview.Designer.cs">
-      <DependentUpon>Preview.cs</DependentUpon>
+    <Compile Include="frmPreview.Designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -193,11 +200,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="frmAdministrator.resx">
+      <DependentUpon>frmAdministrator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authentication.resx">
-      <DependentUpon>Authentication.cs</DependentUpon>
+    <EmbeddedResource Include="frmAuthentication.resx">
+      <DependentUpon>frmAuthentication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emailsend.resx">
       <DependentUpon>Emailsend.cs</DependentUpon>
@@ -205,11 +212,14 @@
     <EmbeddedResource Include="Forward.resx">
       <DependentUpon>Forward.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grievance.resx">
-      <DependentUpon>Grievance.cs</DependentUpon>
+    <EmbeddedResource Include="frmAttachmentImages.resx">
+      <DependentUpon>frmAttachmentImages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GrievanceTrack.resx">
-      <DependentUpon>GrievanceTrack.cs</DependentUpon>
+    <EmbeddedResource Include="frmGrievance.resx">
+      <DependentUpon>frmGrievance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrievanceTrack.resx">
+      <DependentUpon>frmGrievanceTrack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -217,8 +227,8 @@
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preview.resx">
-      <DependentUpon>Preview.cs</DependentUpon>
+    <EmbeddedResource Include="frmPreview.resx">
+      <DependentUpon>frmPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

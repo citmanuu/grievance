@@ -13,13 +13,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MANUUFinance
 {
-    public partial class GrievanceTrack : Form
+    public partial class frmGrievanceTrack : Form
     {
         int GID;
         //Connection String
         string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
 
-        public GrievanceTrack()
+        public frmGrievanceTrack()
         {
             InitializeComponent();
         }
@@ -300,7 +300,7 @@ namespace MANUUFinance
                 objSqlConnection.Close();
                 if (GID > 0)
                 {
-                    Preview objectPreview = new Preview(GID);
+                    frmPreview objectPreview = new frmPreview(GID);
                     objectPreview.ShowDialog();
 
                 }

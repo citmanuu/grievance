@@ -1,6 +1,6 @@
 ﻿namespace MANUUFinance
 {
-    partial class GrievanceTrack
+    partial class frmGrievanceTrack
     {
         /// <summary>
         /// Required designer variable.

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -16,14 +17,14 @@ using System.Windows.Forms;
 
 namespace MANUUFinance
 {
-    public partial class Grievance : Form
+    public partial class frmGrievance : Form
     {
         //Connection String
         string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
 
         public int GlobalId =0, UserId;
         Boolean retrivedata = false;
-        public Grievance(int UserId)
+        public frmGrievance(int UserId)
         {
             InitializeComponent();
             this.UserId = UserId;
@@ -45,7 +46,8 @@ namespace MANUUFinance
         private void Grievance_Load(object sender, EventArgs e)
         {
             Load_datagridview();
-            actionnature();           
+            actionnature();
+            btnAttachment.Enabled = false;
         }
 
         private void Load_datagridview()
@@ -157,6 +159,19 @@ namespace MANUUFinance
                 richTextRemarks.ReadOnly = true;
                 txtDescription.ReadOnly = true;
                 lockbutton();
+                findattachment(Convert.ToInt32(label17.Text));
+            }
+        }
+
+        private void findattachment(int imageId)
+        {
+            if (new imagesAvailable().imagesavailable(imageId))
+            {
+                btnAttachment.Enabled = true;
+            }
+            else
+            {
+                btnAttachment.Enabled = false;
             }
         }
 
@@ -226,6 +241,7 @@ namespace MANUUFinance
             btnresponse.Enabled = true;
             btnPending.Enabled = true;
             btnForward.Enabled = true;
+            btnAttachment.Enabled = false;
             retrivedata = false;
             comboAction.SelectedIndex = 0;
             Load_datagridview();
@@ -303,6 +319,12 @@ namespace MANUUFinance
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnAttachment_Click(object sender, EventArgs e)
+        {
+            frmAttachmentImages objectimage = new frmAttachmentImages(Convert.ToInt32(label17.Text));
+            objectimage.ShowDialog();
         }
 
         private void btnClearSearch_Click(object sender, EventArgs e)

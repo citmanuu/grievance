@@ -1,6 +1,6 @@
 ﻿namespace MANUUFinance
 {
-    partial class Authentication
+    partial class frmAuthentication
     {
         /// <summary>
         /// Required designer variable.

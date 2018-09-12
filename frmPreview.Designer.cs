@@ -1,6 +1,6 @@
 ﻿namespace MANUUFinance
 {
-    partial class Preview
+    partial class frmPreview
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Attachment = new System.Windows.Forms.Button();
+            this.btnAttachment = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -292,15 +292,16 @@
             this.label1.TabIndex = 71;
             this.label1.Text = "Message Discreption";
             // 
-            // Attachment
+            // btnAttachment
             // 
-            this.Attachment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Attachment.Location = new System.Drawing.Point(790, 211);
-            this.Attachment.Name = "Attachment";
-            this.Attachment.Size = new System.Drawing.Size(98, 30);
-            this.Attachment.TabIndex = 72;
-            this.Attachment.Text = "Attachment";
-            this.Attachment.UseVisualStyleBackColor = true;
+            this.btnAttachment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttachment.Location = new System.Drawing.Point(790, 211);
+            this.btnAttachment.Name = "btnAttachment";
+            this.btnAttachment.Size = new System.Drawing.Size(98, 30);
+            this.btnAttachment.TabIndex = 72;
+            this.btnAttachment.Text = "Attachment";
+            this.btnAttachment.UseVisualStyleBackColor = true;
+            this.btnAttachment.Click += new System.EventHandler(this.btnAttachment_Click);
             // 
             // richTextBox1
             // 
@@ -381,7 +382,7 @@
             this.label6.Text = "label6";
             this.label6.Visible = false;
             // 
-            // Preview
+            // frmPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -393,7 +394,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.Attachment);
+            this.Controls.Add(this.btnAttachment);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label19);
@@ -401,7 +402,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
-            this.Name = "Preview";
+            this.Name = "frmPreview";
             this.Text = "Preview";
             this.Load += new System.EventHandler(this.Preview_Load);
             this.groupBox2.ResumeLayout(false);
@@ -437,7 +438,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Attachment;
+        private System.Windows.Forms.Button btnAttachment;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

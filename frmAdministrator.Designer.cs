@@ -1,6 +1,6 @@
 ﻿namespace MANUUFinance
 {
-    partial class Administrator
+    partial class frmAdministrator
     {
         /// <summary>
         /// Required designer variable.

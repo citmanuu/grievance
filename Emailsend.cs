@@ -64,7 +64,7 @@ namespace MANUUFinance
                 //file attachment
                 if (fileName.Length > 0)
                 {
-                    Attachment attachment = new Attachment(fileName);
+                    System.Net.Mail.Attachment attachment = new System.Net.Mail.Attachment(fileName);
                     mailDetails.Attachments.Add(attachment);
                 }
 

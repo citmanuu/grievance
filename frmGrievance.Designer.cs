@@ -1,6 +1,6 @@
 ﻿namespace MANUUFinance
 {
-    partial class Grievance
+    partial class frmGrievance
     {
         /// <summary>
         /// Required designer variable.
@@ -709,6 +709,7 @@
             this.btnAttachment.TabIndex = 65;
             this.btnAttachment.Text = "Attachment";
             this.btnAttachment.UseVisualStyleBackColor = true;
+            this.btnAttachment.Click += new System.EventHandler(this.btnAttachment_Click);
             // 
             // Grievance
             // 

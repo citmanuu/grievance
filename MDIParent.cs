@@ -84,13 +84,13 @@ namespace MANUUFinance
 
         private void complainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grievance objectgrievance = new Grievance(userId);
+            frmGrievance objectgrievance = new frmGrievance(userId);
             objectgrievance.ShowDialog();
         }
 
         private void grievanceTrackReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GrievanceTrack objgrievanceTrack = new GrievanceTrack();
+            frmGrievanceTrack objgrievanceTrack = new frmGrievanceTrack();
             objgrievanceTrack.ShowDialog();
         } 
     }

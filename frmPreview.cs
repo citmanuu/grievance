@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace MANUUFinance
 {
-    public partial class Preview : Form
+    public partial class frmPreview : Form
     {
         int GID;
-        public Preview(int GID)
+        public frmPreview(int GID)
         {
             this.GID = GID;
             InitializeComponent();
@@ -25,6 +25,12 @@ namespace MANUUFinance
         {
             txtDescription.ReadOnly = true;
             richTextBox1.ReadOnly = true;
+            btnAttachment.Enabled = false;
+            uploaddata();
+        }
+
+        private void uploaddata()
+        {
             //Connection String
             string cs = ConfigurationManager.ConnectionStrings["FinanceConnectionString"].ConnectionString;
             //Instantiate SQL Connection
@@ -48,6 +54,15 @@ namespace MANUUFinance
                     txtDescription.Text = objDataReader["GDescription"].ToString();
                     richTextBox1.Text = objDataReader["forwardedRemarks"].ToString();
                     label4.Text = objDataReader["Gregistrationdate&time"].ToString();
+                }
+
+                if(new imagesAvailable().imagesavailable(Convert.ToInt32(label17.Text)))
+                {
+                    btnAttachment.Enabled = true;
+                }
+                else
+                {
+                    btnAttachment.Enabled = false;
                 }
             }
             catch (SqlException ex)
@@ -155,6 +170,12 @@ namespace MANUUFinance
         {
             Emailsend objectemail = new Emailsend((label6.Text).ToString(),0, GID, Convert.ToInt32(label5.Text));
             objectemail.ShowDialog();
+        }
+
+        private void btnAttachment_Click(object sender, EventArgs e)
+        {
+            frmAttachmentImages objectimage = new frmAttachmentImages(Convert.ToInt32(label17.Text));
+            objectimage.ShowDialog();
         }
     }
 }
