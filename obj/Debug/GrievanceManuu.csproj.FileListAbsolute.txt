@@ -121,11 +121,7 @@ G:\Working Envirnment\grievance\bin\Debug\pt\Microsoft.SqlServer.Types.resources
 G:\Working Envirnment\grievance\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 G:\Working Envirnment\grievance\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 G:\Working Envirnment\grievance\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-G:\Working Envirnment\grievance\bin\Debug\Interop.CrystalPrintControlLib.dll
-G:\Working Envirnment\grievance\bin\Debug\AxInterop.CrystalPrintControlLib.dll
 G:\Working Envirnment\grievance\obj\Debug\GrievanceManuu.csprojAssemblyReference.cache
-G:\Working Envirnment\grievance\obj\Debug\Interop.CrystalPrintControlLib.dll
-G:\Working Envirnment\grievance\obj\Debug\AxInterop.CrystalPrintControlLib.dll
 G:\Working Envirnment\grievance\obj\Debug\GrievanceManuu.csproj.ResolveComReference.cache
 G:\Working Envirnment\grievance\obj\Debug\MANUUFinance.Emailsend.resources
 G:\Working Envirnment\grievance\obj\Debug\MANUUFinance.Forward.resources

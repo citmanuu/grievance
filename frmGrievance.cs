@@ -288,31 +288,34 @@ namespace MANUUFinance
                 SearchStatement.Clear();
                 if (txtGrievanceNumber.Text.Length > 0)
                 {
-                    SearchStatement.Append("Convert([GID],'System.String') like '%" + txtGrievanceNumber.Text + "%'");
-                }
-                if (txtCenterSearch.Text.Length > 0)
-                {
-                    if (SearchStatement.Length > 0)
-                    {
-                        SearchStatement.Append(" and ");
-                    }
-                    SearchStatement.Append("center like '%" + txtCenterSearch.Text + "%'");
-                }
-                if (textEmail.Text.Length > 0)
-                {
-                    if (SearchStatement.Length > 0)
-                    {
-                        SearchStatement.Append(" and ");
-                    }
-                    SearchStatement.Append("emailID like '%" + textEmail.Text + "%'");
+                    //MessageBox.Show("Yes");
 
+                    //SearchStatement.Append("GID like '%" + txtGrievanceNumber.Text + "%'");
+                    grievanceViewBindingSource.Filter = ("Convert(GID, 'System.String')like '%" + txtGrievanceNumber.Text + "%'").ToString();
                 }
-                if (SearchStatement.ToString().Length > 0)
-                {
-                    grievanceViewBindingSource.Filter = SearchStatement.ToString();
-                }
-                else
-                    MessageBox.Show("Nothing to Quyery. Please select/set values for query in the form", "Query paramters not set", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if (txtCenterSearch.Text.Length > 0)
+                //{
+                //    if (SearchStatement.Length > 0)
+                //    {
+                //        SearchStatement.Append(" and ");
+                //    }
+                //    SearchStatement.Append("center like '%" + txtCenterSearch.Text + "%'");
+                //}
+                //if (textEmail.Text.Length > 0)
+                //{
+                //    if (SearchStatement.Length > 0)
+                //    {
+                //        SearchStatement.Append(" and ");
+                //    }
+                //    SearchStatement.Append("emailID like '%" + textEmail.Text + "%'");
+
+                //}
+                //if (SearchStatement.ToString().Length > 0)
+                //{
+                //    grievanceViewBindingSource.Filter = SearchStatement.ToString();
+                //}
+                //else
+                //    MessageBox.Show("Nothing to Quyery. Please select/set values for query in the form", "Query paramters not set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -325,6 +328,16 @@ namespace MANUUFinance
         {
             frmAttachmentImages objectimage = new frmAttachmentImages(Convert.ToInt32(label17.Text));
             objectimage.ShowDialog();
+        }
+
+        private void txtGrievanceNumber_TextChanged(object sender, EventArgs e)
+        {
+            btnSearch_Click(null, null);
+        }
+
+        private void txtCenterSearch_TextChanged(object sender, EventArgs e)
+        {
+            btnSearch_Click(null, null);
         }
 
         private void btnClearSearch_Click(object sender, EventArgs e)
