@@ -60,6 +60,17 @@
             this.GDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.forwardedRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearOfAdmissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.centerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grievanceViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grievanceDataSet = new MANUUFinance.GrievanceDataSet();
             this.label12 = new System.Windows.Forms.Label();
@@ -92,17 +103,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnAttachment = new System.Windows.Forms.Button();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearOfAdmissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.centerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGrievance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grievanceViewBindingSource)).BeginInit();
@@ -416,6 +416,83 @@
             this.forwardedRemarks.ReadOnly = true;
             this.forwardedRemarks.Visible = false;
             // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
+            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearOfAdmissionDataGridViewTextBoxColumn
+            // 
+            this.yearOfAdmissionDataGridViewTextBoxColumn.DataPropertyName = "YearOfAdmission";
+            this.yearOfAdmissionDataGridViewTextBoxColumn.HeaderText = "YearOfAdmission";
+            this.yearOfAdmissionDataGridViewTextBoxColumn.Name = "yearOfAdmissionDataGridViewTextBoxColumn";
+            this.yearOfAdmissionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mobileNumberDataGridViewTextBoxColumn
+            // 
+            this.mobileNumberDataGridViewTextBoxColumn.DataPropertyName = "mobileNumber";
+            this.mobileNumberDataGridViewTextBoxColumn.HeaderText = "mobileNumber";
+            this.mobileNumberDataGridViewTextBoxColumn.Name = "mobileNumberDataGridViewTextBoxColumn";
+            this.mobileNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseNameDataGridViewTextBoxColumn
+            // 
+            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
+            this.courseNameDataGridViewTextBoxColumn.HeaderText = "courseName";
+            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
+            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailIDDataGridViewTextBoxColumn
+            // 
+            this.emailIDDataGridViewTextBoxColumn.DataPropertyName = "emailID";
+            this.emailIDDataGridViewTextBoxColumn.HeaderText = "emailID";
+            this.emailIDDataGridViewTextBoxColumn.Name = "emailIDDataGridViewTextBoxColumn";
+            this.emailIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dOBDataGridViewTextBoxColumn
+            // 
+            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
+            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
+            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
+            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // centerDataGridViewTextBoxColumn
+            // 
+            this.centerDataGridViewTextBoxColumn.DataPropertyName = "center";
+            this.centerDataGridViewTextBoxColumn.HeaderText = "center";
+            this.centerDataGridViewTextBoxColumn.Name = "centerDataGridViewTextBoxColumn";
+            this.centerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gDescriptionDataGridViewTextBoxColumn
+            // 
+            this.gDescriptionDataGridViewTextBoxColumn.DataPropertyName = "GDescription";
+            this.gDescriptionDataGridViewTextBoxColumn.HeaderText = "GDescription";
+            this.gDescriptionDataGridViewTextBoxColumn.Name = "gDescriptionDataGridViewTextBoxColumn";
+            this.gDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gstatusDataGridViewTextBoxColumn
+            // 
+            this.gstatusDataGridViewTextBoxColumn.DataPropertyName = "Gstatus";
+            this.gstatusDataGridViewTextBoxColumn.HeaderText = "Gstatus";
+            this.gstatusDataGridViewTextBoxColumn.Name = "gstatusDataGridViewTextBoxColumn";
+            this.gstatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gIDDataGridViewTextBoxColumn
+            // 
+            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
+            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
+            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
+            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // grievanceViewBindingSource
             // 
             this.grievanceViewBindingSource.DataMember = "grievanceView";
@@ -719,6 +796,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Red;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(846, 16);
             this.label19.Name = "label19";
@@ -736,83 +814,6 @@
             this.btnAttachment.Text = "Attachment";
             this.btnAttachment.UseVisualStyleBackColor = true;
             this.btnAttachment.Click += new System.EventHandler(this.btnAttachment_Click);
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
-            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearOfAdmissionDataGridViewTextBoxColumn
-            // 
-            this.yearOfAdmissionDataGridViewTextBoxColumn.DataPropertyName = "YearOfAdmission";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.HeaderText = "YearOfAdmission";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.Name = "yearOfAdmissionDataGridViewTextBoxColumn";
-            this.yearOfAdmissionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mobileNumberDataGridViewTextBoxColumn
-            // 
-            this.mobileNumberDataGridViewTextBoxColumn.DataPropertyName = "mobileNumber";
-            this.mobileNumberDataGridViewTextBoxColumn.HeaderText = "mobileNumber";
-            this.mobileNumberDataGridViewTextBoxColumn.Name = "mobileNumberDataGridViewTextBoxColumn";
-            this.mobileNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseNameDataGridViewTextBoxColumn
-            // 
-            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.HeaderText = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
-            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailIDDataGridViewTextBoxColumn
-            // 
-            this.emailIDDataGridViewTextBoxColumn.DataPropertyName = "emailID";
-            this.emailIDDataGridViewTextBoxColumn.HeaderText = "emailID";
-            this.emailIDDataGridViewTextBoxColumn.Name = "emailIDDataGridViewTextBoxColumn";
-            this.emailIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dOBDataGridViewTextBoxColumn
-            // 
-            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
-            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
-            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
-            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // centerDataGridViewTextBoxColumn
-            // 
-            this.centerDataGridViewTextBoxColumn.DataPropertyName = "center";
-            this.centerDataGridViewTextBoxColumn.HeaderText = "center";
-            this.centerDataGridViewTextBoxColumn.Name = "centerDataGridViewTextBoxColumn";
-            this.centerDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gDescriptionDataGridViewTextBoxColumn
-            // 
-            this.gDescriptionDataGridViewTextBoxColumn.DataPropertyName = "GDescription";
-            this.gDescriptionDataGridViewTextBoxColumn.HeaderText = "GDescription";
-            this.gDescriptionDataGridViewTextBoxColumn.Name = "gDescriptionDataGridViewTextBoxColumn";
-            this.gDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gstatusDataGridViewTextBoxColumn
-            // 
-            this.gstatusDataGridViewTextBoxColumn.DataPropertyName = "Gstatus";
-            this.gstatusDataGridViewTextBoxColumn.HeaderText = "Gstatus";
-            this.gstatusDataGridViewTextBoxColumn.Name = "gstatusDataGridViewTextBoxColumn";
-            this.gstatusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gIDDataGridViewTextBoxColumn
-            // 
-            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
-            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
-            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
-            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmGrievance
             // 
